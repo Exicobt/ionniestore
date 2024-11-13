@@ -39,7 +39,7 @@
   </style>
 </head>
 <body class="bg-[rgb(28,28,28)] font-kanit">
-  <header class="fixed w-full min-h-16 bg-[rgb(46,46,46)] flex items-center justify-center z-50 box-border">
+  <header class="w-full min-h-16 bg-[rgb(46,46,46)] flex items-center justify-center z-50 box-border transition-all duration-500 ease">
     <nav class="relative flex w-full px-10 items-center justify-between text-white">
       <a href="index.html" class="font-bold text-xl xl:text-2xl">ionniestore.id</a>
       <ul class="flex items-center lg:gap-16">
@@ -60,9 +60,11 @@
     </nav>
   </header>
 
-  <div class="search-result-field"></div>
+  <div class="search-result-field w-full h-screen px-5 py-10 hidden">
+    <div class="text-white flex"></div>
+  </div>
 
-  <section class="pt-24 flex justify-center items-center">
+  <section class="relative pt-16 flex justify-center items-center">
     <div class="carousel">
       <div class="carousel-inner">
         <div class="carousel-item">
