@@ -30,6 +30,10 @@ const indicators = document.querySelectorAll('.carousel-indicators div');
 const inner = document.querySelector('.carousel-inner');
 let currentIndex = 0;
 
+function moveSlide() {
+    
+}
+
 setInterval(() => {
     indicators[currentIndex].classList.remove('active');
     currentIndex++
