@@ -8,6 +8,7 @@ function searchActive() {
     searchIcon.classList.add("active")
     searchBtn.classList.add("active")
     document.querySelector("header").classList.add('mb-10', 'xl:mb-0')
+    document.querySelector(".search-input input").focus()
 }
 
 function searchDeactive() {
@@ -80,7 +81,7 @@ function searchGame(games) {
                 filteredGames.forEach(item => {
                     console.log(item)
                     const results = document.createElement('div')
-                    results.classList.add('overflow-hidden', 'flex', 'items-center', 'px-5', 'py-3', 'hover:bg-[#00000038]', 'cursor-pointer', 'transition-all', 'duration-100')
+                    results.classList.add('overflow-hidden', 'flex', 'items-center', 'px-5', 'my-3', 'py-1', 'hover:bg-[#00000038]', 'cursor-pointer', 'transition-all', 'duration-100')
 
                     results.innerHTML = `
                         <img src=${item.logo} alt="Mobile Legends" width="50" class="rounded-lg">
@@ -91,7 +92,7 @@ function searchGame(games) {
                     
                 });
             } else {
-                result.innerHTML = `Hasil pencarian \"${query}\" tidak ditemukan`
+                result.innerHTML = `<p class="text-black ml-5 font-medium p-1 my-3 text-sm">Hasil pencarian tidak ditemukan</p>`
             }
                     
             document.addEventListener('keydown', (keys) => {
