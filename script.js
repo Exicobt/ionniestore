@@ -63,41 +63,47 @@ indicators.forEach((indicator, index) => {
 
 
 const resultField = document.querySelector(".search-result-field")
-const result = document.querySelector(".search-result-field div")
-
 
 function searchGame(games) {
 
-    let search = ''
     searching.addEventListener('input', (e) => {
         const query = e.target.value.split(" ").join("").toLowerCase();
-        
-        document.addEventListener('keydown', (keys) => {
-            if (keys.key === 'Enter') {
-                search = query
 
-                searchDeactive()
-                resultField.classList.remove("hidden")
-                
-                document.querySelectorAll('section').forEach(e => e.style.display = "none")
+        if(query !== "") {
+            resultField.classList.remove("hidden")
+            resultField.classList.add("grid")
+            document.querySelectorAll('section').forEach(e => e.style.display = "none")
 
-                const filteredGames = games.filter(item => item.name.split(" ").join("").toLowerCase() === search);
+            resultField.innerHTML = ""
 
-                if (filteredGames.length > 0) {
+            const filteredGames = games.filter(item => item.name.split(" ").join("").toLowerCase().includes(query));
+
+            if (filteredGames.length > 0) {
                 filteredGames.forEach(item => {
+                    const result = document.createElement("div")
+                    result.classList.add('text-white', 'flex')
+
                     result.innerHTML = `
-                    <div class="bg-orange-400 px-1 pt-[2px] rounded-lg flex flex-col items-center overflow-hidden">
+                    <div class="bg-orange-400 px-1 pt-[2px] max-h-32 rounded-lg flex flex-col items-center overflow-hidden">
                         <img class="rounded-lg mb-1 w-[180px] md:w-[170px] lg:w-[180px] xl:w-[200px]" src="${item.logo}" />
                         <p class="text-white text-center pb-1 max-w-[80%] text-[0.8rem] md:text-[1rem] lg:text-[1.3rem] xl:[1.3rem] leading-6">${item.name}</p>
                     </div>
                     `;
+                    resultField.appendChild(result)
                 });
-                } else {
-                result.innerHTML = `Hasil pencarian \"${search}\" tidak ditemukan`
-                }
-                
+            } else {
+                result.innerHTML = `Hasil pencarian \"${query}\" tidak ditemukan`
             }
-        }, { once: true }); 
+                    
+            document.addEventListener('keydown', (keys) => {
+                if (keys.key === 'Enter') {
+                    searchDeactive()
+                }
+            },{once: true}); 
+        } else {
+            resultField.classList.add("hidden")
+            document.querySelectorAll('section').forEach(e => e.style.display = "flex")
+        }
     });
 }
 

@@ -38,7 +38,7 @@
     }
   </style>
 </head>
-<body class="bg-[rgb(28,28,28)] font-kanit">
+<body class="bg-[rgb(28,28,28)] font-kanit min-h-screen relative">
   <header class="w-full min-h-16 bg-[rgb(46,46,46)] flex items-center justify-center z-50 box-border transition-all duration-500 ease">
     <nav class="relative flex w-full px-10 items-center justify-between text-white">
       <a href="index.html" class="font-bold text-xl xl:text-2xl">ionniestore.id</a>
@@ -48,7 +48,7 @@
             <span class="search-icon p-3 inline-flex z-10">
               <i class="fas fa-search"></i>
             </span>
-            <div class="search-input absolute bg-[rgb(46,46,46)] w-full left-0 right-0 -bottom-[70px] px-10 pt-0 pb-5 hidden  xl:bg-transparent xl:static xl:px-2 transition-transform duration-1000">
+            <div class="search-input absolute bg-[rgb(46,46,46)] w-full left-0 right-0 -bottom-[70px] px-10 pt-0 pb-5 hidden xl:bg-transparent xl:static xl:px-2">
               <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-[rgb(83,83,83)] bg-[rgba(255,255,255,0.8)] rounded-lg placeholder:text-[rgb(83,83,83)] animate-fade-in xl:bg-transparent">
             </div>
            </div>
@@ -60,8 +60,8 @@
     </nav>
   </header>
 
-  <div class="search-result-field w-full h-screen px-5 py-10 hidden">
-    <div class="text-white flex"></div>
+  <div class="h-full xl:px-0">
+    <div class="search-result-field hidden p-10 mb-auto mt-5 grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
   </div>
 
   <section class="relative pt-16 flex justify-center items-center">
@@ -88,7 +88,7 @@
      </div>
   </section>
 
-  <section class="mt-24">
+  <section class="relative mt-24">
     <div class="container m-auto px-5 xl:px-0">
       <h3 class="text-white text-xl xl:text-3xl">All Games</h3>
       <div class="card card-all-games grid mt-5 grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
@@ -101,7 +101,7 @@
     </div>
   </section>
 
-  <footer class="bg-yellow-400 h-20 mt-24">
+  <footer class="bg-yellow-400 h-20 mt-24 absolute right-0 left-0">
   </footer>
 
   <script>
