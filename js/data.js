@@ -1,4 +1,4 @@
-export const data = fetch("../data.json")
+export const data = fetch("./data.json")
     .then(res => res.json())
     .then(data => {
         const games = data.games;
