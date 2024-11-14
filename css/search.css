@@ -1,0 +1,7 @@
+.search-input.active {
+    display: inline;
+}
+
+.search-icon.active { 
+    color: rgba(0, 0, 0, 0.459);
+}

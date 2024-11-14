@@ -1,16 +1,8 @@
-.search-input.active {
-    display: inline;
-}
-
-.search-icon.active {
-    color: rgba(0, 0, 0, 0.459);
-}
-
 .carousel {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 50rem;
+    max-width: 60rem;
     overflow: hidden;
     position: relative;
 }
@@ -27,7 +19,8 @@
 }
 .carousel-item img {
     width: 100%;
-    max-width: 50rem;
+    max-width: 90rem;
+    max-height: 25rem;
     height: 100%;
     border-radius: 10px;
 }
@@ -37,13 +30,15 @@
     margin-top: 10px;
 }
 .carousel-indicators div {
-    width: 30px;
+    width: 10px;
     height: 5px;
     background-color: #ccc;
     margin: 0 5px;
     border-radius: 5px;
     cursor: pointer;
+    transition:  0.5s;
 }
 .carousel-indicators .active {
     background-color: #ff9900;
+    transform: scaleX(2);
 }

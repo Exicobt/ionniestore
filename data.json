@@ -2,7 +2,7 @@
     "games": [
       {
         "name": "Mobile Legends",
-        "logo": "img/ml.jpg",
+        "logo": "../img/ml.jpg",
         "platform": "mobile",
         "description": "Mobile Legends adalah game MOBA yang memungkinkan Anda untuk bertarung dalam tim 5v5 dengan berbagai hero unik.",
         "topup_options": [
@@ -14,7 +14,7 @@
       },
       {
         "name": "Honor of Kings",
-        "logo": "img/hok.jpg",
+        "logo": "../img/hok.jpg",
         "platform": "mobile",
         "description": "Honor of Kings adalah game MOBA yang menampilkan grafik berkualitas tinggi dan berbagai hero epik.",
         "topup_options": [
@@ -26,7 +26,7 @@
       },
       {
         "name": "PUBG Mobile",
-        "logo": "img/pubg.jpg",
+        "logo": "../img/pubg.jpg",
         "platform": "mobile",
         "description": "PUBG Mobile adalah game battle royale yang menempatkan Anda di medan perang untuk bertahan hidup hingga menjadi pemenang.",
         "topup_options": [
@@ -38,7 +38,7 @@
       },
       {
         "name": "Call of Duty Mobile",
-        "logo": "img/codm.jpg",
+        "logo": "../img/codm.jpg",
         "platform": "mobile",
         "description": "COD Mobile membawa pengalaman FPS legendaris dari Call of Duty ke perangkat mobile dengan berbagai mode permainan.",
         "topup_options": [
@@ -50,7 +50,7 @@
       },
       {
         "name": "Free Fire",
-        "logo": "img/ff.jpg",
+        "logo": "../img/ff.jpg",
         "platform": "mobile",
         "description": "Free Fire adalah game battle royale dengan gameplay cepat, bertarung untuk bertahan hidup melawan 49 pemain lainnya.",
         "topup_options": [
@@ -62,7 +62,7 @@
       },
       {
         "name": "Valorant",
-        "logo": "img/valorant.jpg",
+        "logo": "../img/valorant.jpg",
         "platform": "pc",
         "description": "Valorant adalah game FPS taktis dari Riot Games yang menampilkan pertarungan tim berbasis agen dengan keterampilan unik.",
         "topup_options": [
