@@ -48,8 +48,13 @@
             <span class="search-icon p-3 inline-flex z-10">
               <i class="fas fa-search"></i>
             </span>
-            <div class="search-input absolute bg-[rgb(46,46,46)] w-full left-0 right-0 -bottom-[70px] px-10 pt-0 pb-5 hidden xl:bg-transparent xl:static xl:px-2">
-              <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-[rgb(83,83,83)] bg-[rgba(255,255,255,0.8)] rounded-lg placeholder:text-[rgb(83,83,83)] animate-fade-in xl:bg-transparent">
+            <div class="search-input absolute hidden bg-[rgb(46,46,46)] w-full left-0 right-0 -bottom-[70px] px-10 pt-0 pb-5  xl:bg-transparent xl:static xl:px-2">
+              <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-[rgb(83,83,83)] bg-white rounded-lg placeholder:text-[rgb(83,83,83)] animate-fade-in xl:bg-transparent">
+              <div class="search-result-field relative w-full z-10">
+                <div class="field-2 absolute w-full bg-white mt-5 rounded-lg">
+                  
+                </div>
+              </div>
             </div>
            </div>
         </li>
@@ -59,10 +64,6 @@
       </ul>
     </nav>
   </header>
-
-  <div class="h-full xl:px-0">
-    <div class="search-result-field hidden p-10 mb-auto mt-5 grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
-  </div>
 
   <section class="relative pt-16 flex justify-center items-center">
     <div class="carousel">

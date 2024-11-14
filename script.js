@@ -63,6 +63,7 @@ indicators.forEach((indicator, index) => {
 
 
 const resultField = document.querySelector(".search-result-field")
+const result = document.querySelector('.field-2')
 
 function searchGame(games) {
 
@@ -71,25 +72,23 @@ function searchGame(games) {
 
         if(query !== "") {
             resultField.classList.remove("hidden")
-            resultField.classList.add("grid")
-            document.querySelectorAll('section').forEach(e => e.style.display = "none")
-
-            resultField.innerHTML = ""
+            result.innerHTML = ""
 
             const filteredGames = games.filter(item => item.name.split(" ").join("").toLowerCase().includes(query));
 
             if (filteredGames.length > 0) {
                 filteredGames.forEach(item => {
-                    const result = document.createElement("div")
-                    result.classList.add('text-white', 'flex')
+                    console.log(item)
+                    const results = document.createElement('div')
+                    results.classList.add('overflow-hidden', 'flex', 'items-center', 'px-5', 'py-3', 'hover:bg-[#00000038]', 'cursor-pointer', 'transition-all', 'duration-100')
 
-                    result.innerHTML = `
-                    <div class="bg-orange-400 px-1 pt-[2px] max-h-32 rounded-lg flex flex-col items-center overflow-hidden">
-                        <img class="rounded-lg mb-1 w-[180px] md:w-[170px] lg:w-[180px] xl:w-[200px]" src="${item.logo}" />
-                        <p class="text-white text-center pb-1 max-w-[80%] text-[0.8rem] md:text-[1rem] lg:text-[1.3rem] xl:[1.3rem] leading-6">${item.name}</p>
-                    </div>
+                    results.innerHTML = `
+                        <img src=${item.logo} alt="Mobile Legends" width="50" class="rounded-lg">
+                        <p class="text-black ml-5 font-medium">${item.name}</p>
                     `;
-                    resultField.appendChild(result)
+
+                    result.appendChild(results)
+                    
                 });
             } else {
                 result.innerHTML = `Hasil pencarian \"${query}\" tidak ditemukan`
@@ -98,12 +97,16 @@ function searchGame(games) {
             document.addEventListener('keydown', (keys) => {
                 if (keys.key === 'Enter') {
                     searchDeactive()
+                    result.innerHTML = ""
                 }
             },{once: true}); 
         } else {
             resultField.classList.add("hidden")
-            document.querySelectorAll('section').forEach(e => e.style.display = "flex")
+            result.innerHTML = ""
         }
+    });
+    searching.addEventListener('blur', () => {
+        resultField.classList.add("hidden");
     });
 }
 
