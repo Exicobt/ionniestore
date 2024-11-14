@@ -1,8 +1,10 @@
 const next = document.querySelector('.next')
 const prev = document.querySelector('.prev')
-
 const indicators = document.querySelectorAll('.carousel-indicators div');
 const inner = document.querySelector('.carousel-inner');
+const hamburgerBtn = document.querySelector('.hamburger-btn')
+const menu = document.querySelector('.menu')
+const overlay = document.querySelector('.overlay')
 let currentIndex = 0;
 
 function moveSlide() {
@@ -45,3 +47,13 @@ indicators.forEach((indicator, index) => {
         inner.style.transform = `translateX(-${currentIndex * 100}%)`;
     });
 });
+
+hamburgerBtn.addEventListener('click', ()=> {
+    menu.classList.add("!translate-x-0")
+    overlay.classList.remove("hidden")
+})
+
+overlay.addEventListener('click', ()=> {
+    menu.classList.remove("!translate-x-0")
+    overlay.classList.add("hidden")
+})

@@ -42,8 +42,8 @@
 <body class="bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
   <header class="w-full min-h-16 bg-[rgb(255,255,255)] flex items-center justify-center z-50 box-border transition-all duration-500 ease shadow-sm">
     <nav class="relative flex w-full px-10 items-center justify-between text-black">
-      <a href="index.html" class="font-bold text-xl xl:text-2xl">ionniestore.id</a>
-      <ul class="flex items-center lg:gap-16">
+      <a href="index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
+      <ul class="flex items-center gap-10">
         <li class="hover:bg-[#00000029] rounded-full transition duration-200">
            <div class="search-btn flex xl:xl:rounded-full xl:h-10">
             <span class="search-icon p-3 inline-flex z-10">
@@ -57,11 +57,22 @@
             </div>
            </div>
         </li>
-        <li>
-          <button class="bg-[#b5c6e0] w-28 py-2 rounded-3xl text-white hidden lg:inline xl:inline">Daftar</button>
+        <li class="hover:bg-[#00000029] rounded-full transition duration-200 lg:rounded-full xl:rounded-full xl:hover:bg-transparent lg:hover:bg-transparent">
+          <span class="hamburger-btn inline-flex items-center p-2 xl:hidden lg:hidden">
+            <i data-feather="menu" class="text-black"></i>
+          </span>
+          <div class="menu fixed z-[999] h-screen w-1/2 bg-white right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
+            <div class="py-20 w-full lg:py-0 xl:py-0">
+              <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
+                <button class="w-full py-5 text-start text-black font-medium uppercase text-base lg:inline xl:inline lg:text-center lg:w-28 lg:p-2 lg:rounded-full t">masuk</button>
+              </div>
+            </div>
+          </div>
+          
         </li>
       </ul>
     </nav>
+    <div class="overlay fixed inset-0 bg-black opacity-50 z-[998] hidden"></div>
   </header>
 
   <section class="relative pt-10 flex justify-center items-center]">
