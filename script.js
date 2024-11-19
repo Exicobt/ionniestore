@@ -1,3 +1,5 @@
+import { data } from './js/data.js'
+
 const swiper = new Swiper('.swiper', {
     pagination: {
       el: '.swiper-pagination',
@@ -11,8 +13,6 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev'
     },
 });
-
-import { data } from '../js/data.js';
 
 const allGames = document.querySelector(".card-all-games")
 const mobileGames = document.querySelector(".card-mobile-games")
