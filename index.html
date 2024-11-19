@@ -26,17 +26,20 @@
       }
     }
   </script>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/search.css">
   <style>
-    body {
-      transition: margin;
-    }
+    
   </style>
 </head>
 <body class="bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
@@ -61,11 +64,13 @@
           <span class="hamburger-btn inline-flex items-center p-2 xl:hidden lg:hidden">
             <i data-feather="menu" class="text-black"></i>
           </span>
-          <div class="menu fixed z-[999] backdrop-blur-xl h-screen w-[75%] max-w-[20rem] bg-white/60 right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
+          <div class="menu fixed z-[999] backdrop-blur-xl h-screen w-[75%] max-w-[20rem] bg-white/20 right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
             <div class="py-20 w-full lg:py-0 xl:py-0">
-              <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
-                <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t">masuk</button>
-              </div>
+              <a href="./html/login.html">
+                <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
+                  <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">masuk</button>
+                </div>
+              </a>
             </div>
           </div>
           
@@ -75,34 +80,25 @@
     <div class="overlay fixed inset-0 bg-black opacity-50 z-[998] hidden"></div>
   </header>
 
-  <section class="relative pt-10 flex justify-center items-center]">
-    <div class="carousel relative">
-      <div class="carousel-inner">
-        <div class="carousel-item">
-          <img alt="Mobile Legend" height="400" src="img/banner1.jpg" width="1200"/>
-        </div>
-        <div class="carousel-item">
-          <img alt="Valorant" height="400" src="img/banner2.jpg" width="1200"/>
-        </div>
-        <div class="carousel-item">
-          <img alt="Call of Duty Mobile" height="400" src="img/banner3.jpg" width="1200"/>
-        </div>
-      </div>
-      <div class="prev absolute top-[50%] translate-y-[-50%] text-white bg-[#00000062] hover:bg-[#20584d4f] transition-all duration-300 rounded-full p-2 left-[10px]">
-        <i data-feather="arrow-left"></i>
-      </div>
-      <div class="next absolute top-[50%] translate-y-[-50%] text-white bg-[#00000062] hover:bg-[#20584d4f] transition-all duration-300 rounded-full p-2 right-[10px]">
-        <i data-feather="arrow-right"></i>
-      </div>
-      <div class="carousel-indicators">
-        <div class="active"></div>
-        <div></div>
-        <div></div>
-      </div>
-     </div>
-  </section>
+  <section class="relative mt-10">
 
-  <section class="relative mt-14">
+    <div class="swiper max-w-[900px] mb-10 cursor-pointer">
+      <div class="swiper-wrapper">
+        <img src="img/banner-promo/1.jpg" alt="banner" class="swiper-slide rounded-lg">
+        <img src="img/banner-promo/2.jpg" alt="banner" class="swiper-slide rounded-lg">
+        <img src="img/banner-promo/3.jpg" alt="banner" class="swiper-slide rounded-lg">
+        <img src="img/banner-promo/4.jpg" alt="banner" class="swiper-slide rounded-lg">
+        <img src="img/banner-promo/5.jpg" alt="banner" class="swiper-slide rounded-lg">
+        <img src="img/banner-promo/6.jpg" alt="banner" class="swiper-slide rounded-lg">
+      </div>
+      <div class="swiper-pagination"></div>
+    
+      <div class="swiper-button-prev w-8 h-8 bg-black/20 rounded-full"></div>
+      <div class="swiper-button-next w-8 h-8 bg-black/20 rounded-full"></div>
+    
+      <div class="swiper-scrollbar"></div>
+    </div>
+
     <div class="container m-auto px-5 xl:px-0">
       <h3 class="text-black text-xl xl:text-3xl">All Games</h3>
       <div class="card card-all-games grid mt-5 grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
@@ -121,8 +117,7 @@
   <script>
     feather.replace();
   </script>
-  <script src="script.js"></script>
-  <script type="module" src="js/search.js"></script>
-  <script type="module" src="js/list.js"></script>
+  <script type="module" src="script.js"></script>
+  <script type="module" src="js/navbar.js"></script>
 </body>
 </html>

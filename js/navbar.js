@@ -1,4 +1,4 @@
-import { data } from '../js/data.js'
+import { data } from './data.js'
 
 const searchInput = document.querySelector(".search-input")
 const searchBtn = document.querySelector(".search-btn")
@@ -6,6 +6,9 @@ const searchIcon = document.querySelector(".search-icon")
 const searching = document.querySelector(".search-input input")
 const resultField = document.querySelector(".search-result-field")
 const result = document.querySelector('.field-2')
+const hamburgerBtn = document.querySelector('.hamburger-btn')
+const menu = document.querySelector('.menu')
+const overlay = document.querySelector('.overlay')
 
 function searchActive() {
     searchInput.classList.add("active")
@@ -56,7 +59,7 @@ function searchGame(games) {
                     results.classList.add('overflow-hidden', 'flex', 'items-center', 'px-5', 'my-3', 'py-1', 'hover:bg-[#00000038]', 'cursor-pointer', 'transition-all', 'duration-100')
 
                     results.innerHTML = `
-                        <img src=${item.logo} alt="Mobile Legends" width="50" class="rounded-lg">
+                        <img src=${item.logo} alt=${item.name} width="50" class="rounded-lg">
                         <p class="text-black ml-5 font-medium">${item.name}</p>
                     `;
 
@@ -77,4 +80,14 @@ data.then(games => {
     games.forEach(e => {
         searchGame(games)
     });
+})
+
+hamburgerBtn.addEventListener('click', ()=> {
+    menu.classList.add("!translate-x-0")
+    overlay.classList.remove("hidden")
+})
+
+overlay.addEventListener('click', ()=> {
+    menu.classList.remove("!translate-x-0")
+    overlay.classList.add("hidden")
 })

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<style>
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 5px;
+    background-color: #ccc;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    transition:  0.5s;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #ff9900;
+    transform: scaleX(2);
+  }
+
+</style>
+</head>
+<body>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <img src="../img/banner-promo/1.jpg" alt="1" width="600" data-swiper-autoplay="2000" class="swiper-slide">
+      <img src="../img/banner-promo/2.jpg" alt="2" width="600" class="swiper-slide">
+      <img src="../img/banner-promo/3.jpg" alt="3" width="600" class="swiper-slide">
+      <img src="../img/banner-promo/4.jpg" alt="4" width="600" class="swiper-slide">
+      <img src="../img/banner-promo/5.jpg" alt="5" width="600" class="swiper-slide">
+      <img src="../img/banner-promo/6.jpg" alt="6" width="600" class="swiper-slide">
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  
+  <script>
+    const swiper = new Swiper('.swiper', {
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 10000,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+    loop: true,
+});
+  
+
+  </script>
+</body>
+</html>
