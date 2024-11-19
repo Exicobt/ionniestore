@@ -12,7 +12,7 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-import { data } from '../js/data.js';
+import { data } from 'js/data.js';
 
 const allGames = document.querySelector(".card-all-games")
 const mobileGames = document.querySelector(".card-mobile-games")
