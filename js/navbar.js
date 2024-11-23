@@ -87,7 +87,9 @@ hamburgerBtn.addEventListener('click', ()=> {
     overlay.classList.remove("hidden")
 })
 
-overlay.addEventListener('click', ()=> {
-    menu.classList.remove("!translate-x-0")
-    overlay.classList.add("hidden")
-})
+document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+        menu.classList.remove("!translate-x-0");
+        overlay.classList.add("hidden")
+    }
+});

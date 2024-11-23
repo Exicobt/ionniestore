@@ -43,8 +43,8 @@
   </style>
 </head>
 <body class="bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
-  <header class="w-full min-h-16 bg-[rgb(255,255,255)] flex items-center justify-center z-50 box-border transition-all duration-500 ease shadow-sm">
-    <nav class="relative flex w-full px-10 items-center justify-between text-black">
+  <header class="fixed top-0 left-0 right-0 w-full min-h-16 bg-[rgb(255,255,255)] flex items-center justify-center z-[997] box-border transition-all duration-100 ease shadow-sm ">
+    <nav class="relative flex w-full px-5 items-center justify-between text-black">
       <a href="index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
       <ul class="flex items-center gap-2 xl:gap-10">
         <li class="hover:bg-[#00000029] rounded-full transition duration-200">
@@ -55,7 +55,7 @@
             <div class="search-input absolute hidden bg-[rgb(255,255,255)] w-full left-0 right-0 -bottom-[70px] px-6 pt-0 pb-5 xl:bg-transparent xl:static xl:px-2">
               <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-[rgb(83,83,83)] bg-white rounded-lg placeholder:text-[rgb(83,83,83)] animate-fade-in xl:bg-transparent">
               <div class="search-result-field relative w-full z-10">
-                <div class="field-2 absolute w-full bg-white mt-5 rounded-lg max-h-40 overflow-auto"></div>
+                <div class="field-2 absolute w-full bg-red-400 mt-5 rounded-lg max-h-40 overflow-auto"></div>
               </div>
             </div>
            </div>
@@ -64,32 +64,35 @@
           <span class="hamburger-btn inline-flex items-center p-2 xl:hidden lg:hidden">
             <i data-feather="menu" class="text-black"></i>
           </span>
-          <div class="menu fixed z-[999] backdrop-blur-xl h-screen w-[75%] max-w-[20rem] bg-white/20 right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
-            <div class="py-20 w-full lg:py-0 xl:py-0">
+          <div class="menu fixed z-[999] h-screen w-[75%] max-w-[20rem] bg-white right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
+            <div class="py-20 w-full lg:py-0 xl:py-0 flex flex-col lg:flex-row">
               <a href="./html/login.html">
-                <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
-                  <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">masuk</button>
+                <div href="./html/login.html" class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
+                    <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">promo</button>
+                </div>
+              </a>
+              <a href="./html/login.html">
+                <div href="./html/login.html" class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
+                    <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">masuk</button>
                 </div>
               </a>
             </div>
           </div>
-          
         </li>
       </ul>
     </nav>
     <div class="overlay fixed inset-0 bg-black opacity-50 z-[998] hidden"></div>
   </header>
 
-  <section class="relative mt-10">
-
-    <div class="swiper max-w-[900px] mb-10 cursor-pointer">
+  <section class="relative mt-24 md:px-5 lg:px-5 xl:px-5">
+    <div class="swiper max-h-[500px] mb-10 cursor-pointer">
       <div class="swiper-wrapper">
-        <img src="img/banner-promo/1.jpg" alt="banner" class="swiper-slide rounded-lg">
-        <img src="img/banner-promo/2.jpg" alt="banner" class="swiper-slide rounded-lg">
-        <img src="img/banner-promo/3.jpg" alt="banner" class="swiper-slide rounded-lg">
-        <img src="img/banner-promo/4.jpg" alt="banner" class="swiper-slide rounded-lg">
-        <img src="img/banner-promo/5.jpg" alt="banner" class="swiper-slide rounded-lg">
-        <img src="img/banner-promo/6.jpg" alt="banner" class="swiper-slide rounded-lg">
+        <img src="img/banner-promo/1.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
+        <img src="img/banner-promo/2.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
+        <img src="img/banner-promo/3.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
+        <img src="img/banner-promo/4.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
+        <img src="img/banner-promo/5.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
+        <img src="img/banner-promo/6.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
       </div>
       <div class="swiper-pagination"></div>
     
@@ -99,7 +102,7 @@
       <div class="swiper-scrollbar"></div>
     </div>
 
-    <div class="container m-auto px-5 xl:px-0">
+    <div class="m-auto w-full px-5 md:px-0 lg:px-0 xl:px-0">
       <h3 class="text-black text-xl xl:text-3xl">All Games</h3>
       <div class="card card-all-games grid mt-5 grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
 
@@ -111,7 +114,17 @@
     </div>
   </section>
 
-  <footer class="bg-yellow-400 h-20 mt-24 absolute right-0 left-0">
+  <footer class="bg-[#ff9900] mt-24 px-5 py-20 box-content">
+    <div class="flex justify-center">
+      <div class=" text-white w-[50%] text-center font-bold text-xl xl:text-2xl bg-black">ionniestore.id</div>
+      <div class="w-[50%] text-center">
+        <h3>PETA SITUS</h3>
+        <div class="flex flex-col">
+          <a href="./html/login.html">Masuk</a>
+          <a href="./html/login.html">Daftar</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
