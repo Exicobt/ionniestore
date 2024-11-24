@@ -1,134 +1,263 @@
-<!doctype html>
-<html class="box-border">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/feather-icons"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-        animation: {
-          'fade-in': 'fadeIn .8s ease', 
-        },
-        keyframes: {
-          fadeIn: {
-            '0%': { opacity: '0' },
-            '100%': { opacity: '1' },
-          },
-        },
-        
-      },
-      fontFamily: {
-        'kanit': ['Kanit', 'sans-serif']
-      }
-      }
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembelian Diamond</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/search.css">
-  <style>
-    body {
-      transition: margin;
-    }
-  </style>
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.user-input, .top-up, .payment, .promo, .purchase {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group input {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.top-up-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.diamond {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #e6f7ff;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #b3e5fc;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.diamond img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.diamond:hover {
+    transform: scale(1.05);
+    background-color: #d4f0ff;
+}
+
+.payment-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.payment-method img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.payment-method:hover {
+    background-color: #f0f0f0;
+}
+
+.promo input, .purchase input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.purchase button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.purchase button:hover {
+    background-color: #218838;
+}
+    </style>
 </head>
-<body class="overflow-x-hidden bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
-  <header class="w-full min-h-16 bg-[rgb(255,255,255)] flex items-center justify-center z-50 box-border transition-all duration-500 ease shadow-sm">
-    <nav class="relative flex w-full px-10 items-center justify-between text-black">
-      <a href="index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
-      <ul class="flex items-center gap-2 xl:gap-10">
-        <li class="hover:bg-[#00000029] rounded-full transition duration-200">
-           <div class="search-btn flex xl:xl:rounded-full xl:h-10">
-            <span class="search-icon p-3 inline-flex z-10">
-              <i class="fas fa-search"></i>
-            </span>
-            <div class="search-input absolute hidden bg-[rgb(255,255,255)] w-full left-0 right-0 -bottom-[70px] px-6 pt-0 pb-5 xl:bg-transparent xl:static xl:px-2">
-              <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-[rgb(83,83,83)] bg-white rounded-lg placeholder:text-[rgb(83,83,83)] animate-fade-in xl:bg-transparent">
-              <div class="search-result-field relative w-full z-10">
-                <div class="field-2 absolute w-full bg-white mt-5 rounded-lg max-h-40 overflow-auto"></div>
-              </div>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <img src="mobile-legends-banner.jpg" alt="Mobile Legends Banner" class="banner">
+            <h1>Mobile Legends: Bang Bang</h1>
+        </header>
+
+        <!-- User Input -->
+        <section class="user-input">
+            <h2>Masukkan User ID:</h2>
+            <div class="input-group">
+                <input type="text" placeholder="Masukkan User ID">
+                <input type="text" placeholder="Masukkan Nickname">
             </div>
-           </div>
-        </li>
-        <li class="hover:bg-[#00000029] rounded-full transition duration-200 lg:rounded-full xl:rounded-full xl:hover:bg-transparent lg:hover:bg-transparent">
-          <span class="hamburger-btn inline-flex items-center p-2 xl:hidden lg:hidden">
-            <i data-feather="menu" class="text-black"></i>
-          </span>
-          <div class="menu fixed z-[999] backdrop-blur-xl h-screen w-[75%] max-w-[20rem] bg-white/20 right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
-            <div class="py-20 w-full lg:py-0 xl:py-0">
-              <a href="./login.html">
-                <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
-                  <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">masuk</button>
-                </div>
-              </a>
+        </section>
+
+        <!-- Pilih Nominal Top Up -->
+        <section class="top-up">
+            <h2>Pilih Nominal Top Up</h2>
+            <div class="top-up-grid">
+                <!-- Diamond Items -->
+                <button class="diamond">
+                    <img src="diamond.png" alt="Diamond">
+                    <span>3 Diamonds<br>Rp. 2.000</span>
+                </button>
+                <button class="diamond">
+                    <img src="diamond.png" alt="Diamond">
+                    <span>19 Diamonds<br>Rp. 5.000</span>
+                </button>
+                <button class="diamond">
+                    <img src="diamond.png" alt="Diamond">
+                    <span>44 Diamonds<br>Rp. 16.000</span>
+                </button>
+                <button class="diamond">
+                    <img src="diamond.png" alt="Diamond">
+                    <span>50 Diamonds<br>Rp. 21.000</span>
+                </button>
+                <button class="diamond">
+                    <img src="diamond.png" alt="Diamond">
+                    <span>85 Diamonds<br>Rp. 43.000</span>
+                </button>
+                <button class="diamond">
+                    <img src="diamond.png" alt="Diamond">
+                    <span>100 Diamonds<br>Rp. 50.000</span>
+                </button>
+                <button class="diamond">
+                    <img src="diamond.png" alt="Diamond">
+                    <span>127 Diamonds<br>Rp. 58.000</span>
+                </button>
+                <button class="diamond">
+                    <img src="diamond.png" alt="Diamond">
+                    <span>255 Diamonds<br>Rp. 99.000</span>
+                </button>
+                <button class="diamond">
+                    <img src="diamond.png" alt="Diamond">
+                    <span>485 Diamonds<br>Rp. 183.340</span>
+                </button>
+                <button class="diamond">
+                    <img src="diamond.png" alt="Diamond">
+                    <span>688 Diamonds<br>Rp. 256.000</span>
+                </button>
+                <button class="diamond">
+                    <img src="diamond.png" alt="Diamond">
+                    <span>1088 Diamonds<br>Rp. 315.000</span>
+                </button>
             </div>
-          </div>
-          
-        </li>
-      </ul>
-    </nav>
-    <div class="overlay fixed inset-0 bg-black opacity-50 z-[998] hidden"></div>
-  </header>
+        </section>
 
-  <!-- header end -->
+        <!-- Metode Pembayaran -->
+        <section class="payment">
+            <h2>Metode Pembayaran</h2>
+            <div class="payment-options">
+                <button class="payment-method">
+                    <img src="gopay.png" alt="GoPay">
+                    <span>GoPay</span>
+                </button>
+                <button class="payment-method">
+                    <img src="dana.png" alt="Dana">
+                    <span>Dana</span>
+                </button>
+                <button class="payment-method">
+                    <img src="ovo.png" alt="OVO">
+                    <span>OVO</span>
+                </button>
+                <button class="payment-method">
+                    <img src="shopeepay.png" alt="ShopeePay">
+                    <span>ShopeePay</span>
+                </button>
+                <button class="payment-method">
+                    <img src="qris.png" alt="QRIS">
+                    <span>QRIS</span>
+                </button>
+                <button class="payment-method">
+                    <img src="telkomsel.png" alt="Telkomsel">
+                    <span>Telkomsel</span>
+                </button>
+                <button class="payment-method">
+                    <img src="indomaret.png" alt="Indomaret">
+                    <span>Indomaret</span>
+                </button>
+                <button class="payment-method">
+                    <img src="alfamart.png" alt="Alfamart">
+                    <span>Alfamart</span>
+                </button>
+            </div>
+        </section>
 
-  <!-- informasi game -->
+        <!-- Kode Promo -->
+        <section class="promo">
+            <h2>Kode Promo (Opsional)</h2>
+            <input type="text" placeholder="Masukkan Kode Promo">
+        </section>
 
-  <section class="info relative">
-    <div class="relative bg-cover w-full h-[300px] md:h-[350px] lg:h-[400px] xl:h-[500px]" style="background-image: url(../img/banner1.jpg);"> 
-      <div class="w-full h-full bg-black opacity-80"></div>
-    </div> <!-- banner -->
-    <div class="px-4">
-      <div class="flex w-full translate-y-[-50%] box-border"> <!-- game profile -->
-        <img src="../img/ml.jpg" alt="mobile legends" width="150" class="rounded-md "> <!--icon -->
-        <div class="flex flex-col ml-10 justify-center gap-10"> <!-- side -->
-          <p class="text-white text-2xl bg-gradie">Mobile Legends</p>
-          <div class="flex gap-3"> <!-- star -->
-            <i data-feather="star" class="bg-yellow-300 bg-clip-text"></i>
-            <i data-feather="star"></i>
-            <i data-feather="star"></i>
-            <i data-feather="star"></i>
-            <i data-feather="star"></i>
-          </div> <!-- star end -->
-        </div>
-      </div> <!-- side end -->
-      <button class="drop-down flex justify-between w-full items-center">
-        <p>Tentang Game</p>
-        <i data-feather="chevron-down" class="drop-down-icon transition-all duration-500"></i>
-      </button>
-      <p class="desc scale-y-0 transition-all duration-200"></p>
+        <!-- Pembelian -->
+        <section class="purchase">
+            <h2>Beli</h2>
+            <input type="email" placeholder="Masukkan Alamat Email">
+            <button>Beli Sekarang</button>
+        </section>
     </div>
-  </section>
-
-  <!-- informasi game end -->
-
-  <!-- topup game -->
-
-  <section class="relative mt-36 px-10">
-    <div class="info-account relative bg-white shadow-lg w-full px-10 pt-5 pb-12 rounded-lg">
-      <h2 class="font-medium text-2xl text-center">Masukkan Informasi Akun</h2>
-      <div class="flex justify-between mt-10 gap-10">
-        <input type="text" autocomplete="off" inputmode="numeric" placeholder="User ID" min="0" class="outline-none bg-black/10 px-5 py-3 rounded-xl w-full placeholder:text-black flex-2 border-4 border-black/80 ">
-        <input type="text" autocomplete="off" inputmode="numeric" placeholder="Zone ID" maxlength="4" class="outline-none bg-black/10 px-5 py-3 rounded-xl w-full placeholder:text-black border-4 border-black/80">
-      </div>
-    </div>
-  </section>
-
-  <!-- topup game end -->
-
-  <footer class="bg-yellow-400 h-20 mt-24 absolute right-0 left-0">
-  </footer>
-
-  <script>
-    feather.replace();
-  </script>
-  <script type="module" src="../js/navbar.js"></script>
-  <script type="module" src="../js/mobile-legends.js"></script>
 </body>
 </html>

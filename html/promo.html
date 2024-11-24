@@ -26,19 +26,23 @@
       }
     }
   </script>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/search.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/search.css">
   <style>
-    body {
-      transition: margin;
-    }
+    
   </style>
 </head>
-<body class="overflow-x-hidden bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
+<body class="bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
   <header class="fixed top-0 left-0 right-0 w-full min-h-16 bg-[rgb(255,255,255)] flex items-center justify-center z-[997] box-border transition-all duration-100 ease shadow-sm ">
     <nav class="relative flex w-full px-5 items-center justify-between text-black">
       <a href="index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
@@ -80,14 +84,18 @@
     <div class="overlay fixed inset-0 bg-black opacity-50 z-[998] hidden"></div>
   </header>
 
+  <section class="relative mt-24 md:px-5 lg:px-5 xl:px-5">
+    
+  </section>
+
   <footer class="bg-[#ff9900] mt-24 px-5 py-20 box-content">
     <div class="flex flex-col lg:flex-row justify-start gap-10">
       <div class=" text-white text-start font-bold text-3xl xl:text-2xl">ionniestore.id</div>
       <div class="text-start">
         <h3 class="font-bold mb-2">PETA SITUS</h3>
         <div class="flex flex-col text-black/70">
-          <a href="#">Masuk</a>
-          <a href="#">Daftar</a>
+          <a href="../html/login.html">Masuk</a>
+          <a href="../html/login.html">Daftar</a>
         </div>
       </div>
       <div>
@@ -116,7 +124,7 @@
   <script>
     feather.replace();
   </script>
-  <script type="module" src="../js/navbar.js"></script>
-  <script type="module" src="../js/mobile-legends.js"></script>
+  <script type="module" src="script.js"></script>
+  <script type="module" src="js/navbar.js"></script>
 </body>
 </html>
