@@ -1,263 +1,283 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="box-border">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pembelian Diamond</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-      /* style.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.banner {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-header h1 {
-    margin: 10px 0;
-    font-size: 24px;
-    color: #333;
-}
-
-.user-input, .top-up, .payment, .promo, .purchase {
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.input-group {
-    display: flex;
-    gap: 10px;
-}
-
-.input-group input {
-    width: 50%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.top-up-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.diamond {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #e6f7ff;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #b3e5fc;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.diamond img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 10px;
-}
-
-.diamond:hover {
-    transform: scale(1.05);
-    background-color: #d4f0ff;
-}
-
-.payment-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.payment-method {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.payment-method img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-}
-
-.payment-method:hover {
-    background-color: #f0f0f0;
-}
-
-.promo input, .purchase input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.purchase button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.purchase button:hover {
-    background-color: #218838;
-}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+        animation: {
+          'fade-in': 'fadeIn .8s ease', 
+        },
+        keyframes: {
+          fadeIn: {
+            '0%': { opacity: '0' },
+            '100%': { opacity: '1' },
+          },
+        },
+        
+      },
+      fontFamily: {
+        'kanit': ['Kanit', 'sans-serif']
+      }
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/search.css">
+  <style>
+    body {
+      transition: margin;
+    }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <img src="mobile-legends-banner.jpg" alt="Mobile Legends Banner" class="banner">
-            <h1>Mobile Legends: Bang Bang</h1>
-        </header>
-
-        <!-- User Input -->
-        <section class="user-input">
-            <h2>Masukkan User ID:</h2>
-            <div class="input-group">
-                <input type="text" placeholder="Masukkan User ID">
-                <input type="text" placeholder="Masukkan Nickname">
+<body class="overflow-x-hidden bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
+  <header class="fixed top-0 left-0 right-0 w-full min-h-16 bg-[rgb(255,255,255)] flex items-center justify-center z-[997] box-border transition-all duration-100 ease shadow-sm ">
+    <nav class="relative flex w-full px-5 items-center justify-between text-black">
+      <a href="../index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
+      <ul class="flex items-center gap-2 xl:gap-10">
+        <li class="hover:bg-[#00000029] rounded-full transition duration-200">
+           <div class="search-btn flex xl:xl:rounded-full xl:h-10">
+            <span class="search-icon p-3 inline-flex z-10">
+              <i class="fas fa-search"></i>
+            </span>
+            <div class="search-input absolute hidden bg-[rgb(255,255,255)] w-full left-0 right-0 -bottom-[70px] px-6 pt-0 pb-5 xl:bg-transparent xl:static xl:px-2">
+              <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-[rgb(83,83,83)] bg-white rounded-lg placeholder:text-[rgb(83,83,83)] animate-fade-in xl:bg-transparent">
+              <div class="search-result-field relative w-full z-10">
+                <div class="field-2 absolute w-full bg-white mt-5 rounded-lg max-h-40 overflow-auto"></div>
+              </div>
             </div>
-        </section>
-
-        <!-- Pilih Nominal Top Up -->
-        <section class="top-up">
-            <h2>Pilih Nominal Top Up</h2>
-            <div class="top-up-grid">
-                <!-- Diamond Items -->
-                <button class="diamond">
-                    <img src="diamond.png" alt="Diamond">
-                    <span>3 Diamonds<br>Rp. 2.000</span>
-                </button>
-                <button class="diamond">
-                    <img src="diamond.png" alt="Diamond">
-                    <span>19 Diamonds<br>Rp. 5.000</span>
-                </button>
-                <button class="diamond">
-                    <img src="diamond.png" alt="Diamond">
-                    <span>44 Diamonds<br>Rp. 16.000</span>
-                </button>
-                <button class="diamond">
-                    <img src="diamond.png" alt="Diamond">
-                    <span>50 Diamonds<br>Rp. 21.000</span>
-                </button>
-                <button class="diamond">
-                    <img src="diamond.png" alt="Diamond">
-                    <span>85 Diamonds<br>Rp. 43.000</span>
-                </button>
-                <button class="diamond">
-                    <img src="diamond.png" alt="Diamond">
-                    <span>100 Diamonds<br>Rp. 50.000</span>
-                </button>
-                <button class="diamond">
-                    <img src="diamond.png" alt="Diamond">
-                    <span>127 Diamonds<br>Rp. 58.000</span>
-                </button>
-                <button class="diamond">
-                    <img src="diamond.png" alt="Diamond">
-                    <span>255 Diamonds<br>Rp. 99.000</span>
-                </button>
-                <button class="diamond">
-                    <img src="diamond.png" alt="Diamond">
-                    <span>485 Diamonds<br>Rp. 183.340</span>
-                </button>
-                <button class="diamond">
-                    <img src="diamond.png" alt="Diamond">
-                    <span>688 Diamonds<br>Rp. 256.000</span>
-                </button>
-                <button class="diamond">
-                    <img src="diamond.png" alt="Diamond">
-                    <span>1088 Diamonds<br>Rp. 315.000</span>
-                </button>
+           </div>
+        </li>
+        <li class="hover:bg-[#00000029] rounded-full transition duration-200 lg:rounded-full xl:rounded-full xl:hover:bg-transparent lg:hover:bg-transparent">
+          <span class="hamburger-btn inline-flex items-center p-2 xl:hidden lg:hidden">
+            <i data-feather="menu" class="text-black"></i>
+          </span>
+          <div class="menu fixed z-[999] h-screen w-[75%] max-w-[20rem] bg-white right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
+            <div class="py-20 w-full lg:py-0 xl:py-0 flex flex-col lg:flex-row">
+              <a href="../html/promo.html">
+                <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
+                    <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">promo</button>
+                </div>
+              </a>
+              <a href="../html/login.html">
+                <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
+                    <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">masuk</button>
+                </div>
+              </a>
             </div>
-        </section>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="overlay fixed inset-0 bg-black opacity-50 z-[998] hidden"></div>
+  </header>
 
-        <!-- Metode Pembayaran -->
-        <section class="payment">
-            <h2>Metode Pembayaran</h2>
-            <div class="payment-options">
-                <button class="payment-method">
-                    <img src="gopay.png" alt="GoPay">
-                    <span>GoPay</span>
-                </button>
-                <button class="payment-method">
-                    <img src="dana.png" alt="Dana">
-                    <span>Dana</span>
-                </button>
-                <button class="payment-method">
-                    <img src="ovo.png" alt="OVO">
-                    <span>OVO</span>
-                </button>
-                <button class="payment-method">
-                    <img src="shopeepay.png" alt="ShopeePay">
-                    <span>ShopeePay</span>
-                </button>
-                <button class="payment-method">
-                    <img src="qris.png" alt="QRIS">
-                    <span>QRIS</span>
-                </button>
-                <button class="payment-method">
-                    <img src="telkomsel.png" alt="Telkomsel">
-                    <span>Telkomsel</span>
-                </button>
-                <button class="payment-method">
-                    <img src="indomaret.png" alt="Indomaret">
-                    <span>Indomaret</span>
-                </button>
-                <button class="payment-method">
-                    <img src="alfamart.png" alt="Alfamart">
-                    <span>Alfamart</span>
-                </button>
-            </div>
-        </section>
-
-        <!-- Kode Promo -->
-        <section class="promo">
-            <h2>Kode Promo (Opsional)</h2>
-            <input type="text" placeholder="Masukkan Kode Promo">
-        </section>
-
-        <!-- Pembelian -->
-        <section class="purchase">
-            <h2>Beli</h2>
-            <input type="email" placeholder="Masukkan Alamat Email">
-            <button>Beli Sekarang</button>
-        </section>
+  <section class="relative mt-16">
+    <img src="../img/banner-game/Mlbb.jpg" alt="Mobile legend" class="min-w-full max-h-[500px] blur-sm ">
+    <div class="translate-y-[-50%] flex">
+        <img src="../img/icon-game/ml.jpg" alt="Mobile Legend" class="w-28 md:w-32 lg:w-40 rounded-md mx-5">
+        <div class="flex flex-col items-start justify-center gap-5">
+            <h1 class="text-white text-xl">Mobile Legends</h1>
+            <p>Moba, PvP</p>
+        </div>
     </div>
+    <div class="mx-5 px-5 py-3 pb-10 bg-white shadow-md rounded-xl">
+        <h2 class="text-lg font-semibold text-gray-700 mb-4">Masukkan User:</h2>
+            <div class="flex gap-4">
+                <input type="text" inputmode="numeric" placeholder=" User ID" 
+                    class="w-full p-3 border rounded-md outline-none ">
+                <input type="text" inputmode="numeric" maxlength="4" placeholder="Zone ID" 
+                    class="w-full p-3 border rounded-md outline-none ">
+            </div>
+            <div class="flex gap-4">
+                <p class="w-full opacity-50">(1234567890)</p>
+                <p class="w-full opacity-50">(1234)</p>
+            </div>
+    </div>
+
+    <div class="mx-5 mt-20 px-5 py-3 pb-10 bg-white shadow-md rounded-xl">
+        <h2 class="text-lg font-semibold text-gray-700 mb-4">Pilih Nominal Topup:</h2>
+        <div class="box box-border flex flex-wrap gap-4"></div>
+    </div>
+
+    <div class="mx-5 mt-20 px-5 py-3 pb-10 bg-white shadow-md rounded-xl">
+        <h2 class="text-lg font-semibold text-gray-700 mb-4">Pilih Metode Pembayaran:</h2>
+        <div class="payment-method flex flex-wrap gap-5">
+          
+          
+        </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#ff9900] mt-24 px-5 py-20 box-content">
+    <div class="flex flex-col lg:flex-row justify-start gap-10">
+      <div class=" text-white text-start font-bold text-3xl xl:text-2xl">ionniestore.id</div>
+      <div class="text-start">
+        <h3 class="font-bold mb-2">PETA SITUS</h3>
+        <div class="flex flex-col text-black/70">
+          <a href="login.html">Masuk</a>
+          <a href="#">Daftar</a>
+          <a href="../html/promo.html">Promo</a>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3 class="font-bold mb-2">AREA</h3>
+          <div class="flex text-black/70 gap-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Indonesia_%28physical_version%29.svg" alt="indonesia" class="rounded-full w-5 h-5">
+            Indonesia
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">METODE PEMBAYARAN</h3>
+        <div class="flex flex-wrap gap-2">
+          <img src="../img/icon-pembayaran/gopay.png" alt="gopay" width="70">
+          <img src="../img/icon-pembayaran/dana.png" alt="dana" width="70">
+          <img src="../img/icon-pembayaran/ovo.png" alt="ovo" width="70">
+          <img src="../img/icon-pembayaran/shopeepay.png" alt="spay" width="70">
+          <img src="../img/icon-pembayaran/qris.png" alt="qris" width="70">
+          <img src="../img/icon-pembayaran/indomaret.png" alt="indomaret" width="70">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    feather.replace();
+  </script>
+  <script type="module" src="../js/navbar.js"></script>
+  <script>
+    const icons = ['https://s3-alpha-sig.figma.com/img/6121/d8d3/f18f0f1cad745a09fff601908fd0b8ff?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZThf3DIeysKZb0WZXmtnzudWfA4zE2Jo~JaaX8Q13b7CGAo3g6SwxH1Mg9reLjgbbw0hvk7DhnZp-K7YPP10LUyOg6i-QOHMyRjpKi0x53Pcpvmq7KnArOPcmCcOPmtpqvwdQ-Clx7VyNZYcgw71lgI6Y~n0lewukcSJ2RYpagQgA75QtLxmNbTldEvt12cxMYnuemWTbB8seF5NXv0yBmaygfoccxYvEWJzbk3ywzzib4n5MA3bXRHeZAL-XHENLazYhcOppJ~O16VYaRW3BVR-YjJF~0dSi9KmmcvpF-WlSW3LHL3ww~kMCnD6sin01R0J1qBQ~a3-KDiMSJ~ndA__', 'https://s3-alpha-sig.figma.com/img/b8a6/175a/ca2be2870a39cf9f546b13643dab1ab0?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZKP6x~91csQCtYemUUC4ar2psudeNYwfiESs3NYCA2KaQ8LO7ShgtZ7L4uWaz9EikJJHOtpqBUqUn80mluTUoNxOo5ZK5PIkdcqIsR2Qie3ZePteP7C8oZ5gzDgqSCO25PWzXmEOFJQziNGznt9bQ1UcPLrbnTbp33Rkwd~XIo7DqnDLUPbkHDcLKuzV01prpmFKmCZp1~bzcaxSQoPaHYygWtHDKfIAMbjwEgYRiFxPYBW6DLnMwELR1J7YWRHIfEkoZ9n7ER-0tEt7tCiTX3bnoztKsDgrQUq4ji9XhLfEnxIH3tym7XldBOVoHoWuZwRY4Fmo4qDwUehIGjkyQ__', 'https://s3-alpha-sig.figma.com/img/d1dd/83d4/cbcd4291421a9cc4e9b887becd328d89?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nKpw4ksMTDxvQs3qyqIaPToTB5aBeYm3sUsdgncJs68V2EvkNXk6W4JL3ZNZaGs7GV4GMHMYenqH7JH9jsxPK3iICWxnWOeAu7aiymd3qa1tFwbxIQNA~uzrHe8Q-PPZfuelQ6IlvuNeKNWEqS~LH0YRCgo0qDLmXKhN7X936NcDRcxx7wmbVJBZP9BZu0-TRcLbp9JlnBMF~979NmQ-ZzkFZtpRD8HRMKhv1a5vuKQIyyg5hk0yWtQiawxM1qXNvYmqrcnLxTj2ciA9fxC3u9Bo2npvHAyqn360S0CMkD8UT6xC-KaWRHhxyI9y7clEGEviLKy7QEva76EO1SO3PA__']
+
+    const box = document.querySelector('.box')
+    const barangList = document.querySelector('.box');
+    const paymentMEthod = document.querySelector('.payment-method')
+    const totalHarga = 0
+
+    const paymentMethods = [
+    { name: 'Gopay', tax: 0.02, icon: '../img/icon-pembayaran/gopay.png' },
+    { name: 'Dana', tax: 0.015, icon: '../img/icon-pembayaran/dana.png' },
+    { name: 'OVO', tax: 0.025, icon: '../img/icon-pembayaran/ovo.png' },
+    { name: 'ShopeePay', tax: 0.03, icon: '../img/icon-pembayaran/shopeepay.png' },
+    { name: 'Indomaret', tax: 0.04, icon: '../img/icon-pembayaran/indomaret.png' },
+    { name: 'Qris', tax: 0.02, icon: '../img/icon-pembayaran/qris.png' }
+];
+
+    paymentMethods.forEach((method) => {
+        const paymentHTML = `
+            <div class="payment-box bg-white shadow-md p-3 rounded-lg hover:bg-[#dcdcdc] transition-all duration-150 cursor-pointer flex flex-col gap-10 items-center gap-2">
+                <img src="${method.icon}" width='100'>
+                <p>${method.name}</p>
+            </div>
+        `;
+        paymentMEthod.innerHTML += paymentHTML;
+    });
+
+    paymentMEthod.addEventListener('click', (event) => {
+        if (event.target.closest('.payment-box')) {
+            const allPayments = document.querySelectorAll('.payment-box');
+            allPayments.forEach((payment) => payment.classList.remove('border-2', 'border-blue-400', 'selected'));
+
+            const selectedPayment = event.target.closest('.payment-box');
+            selectedPayment.classList.add('border-2', 'border-blue-400', 'selected');
+            calculateTotal();
+        }
+    });
+
+    function calculateTotal() {
+        const selectedItem = document.querySelector('.boxes.selected');
+        const selectedPayment = document.querySelector('.payment-box.selected');
+
+        if (selectedItem && selectedPayment) {
+            const itemPrice = parseInt(selectedItem.querySelector('p:last-child').innerText.replace(/[^\d]/g, ''));
+            const paymentName = selectedPayment.querySelector('p').innerText;
+
+            const paymentMethod = paymentMethods.find(method => method.name === paymentName);
+            const tax = paymentMethod.tax;
+
+            const totalPrice = itemPrice + (itemPrice * tax);
+            Swal.fire({
+                title: 'Total Harga',
+                text: `Total: ${new Intl.NumberFormat('id-ID', {
+                    style: 'currency',
+                    currency: 'IDR'
+                }).format(totalPrice)}`,
+                icon: 'info'
+            });
+        }
+    }
+
+    class Topup {
+        constructor(jumlah, harga) {
+            this.jumlah = jumlah
+            this.harga = harga
+        }
+
+        update() {
+            let icon = ''
+
+            if(this.jumlah < 100) {
+                icon = icons[0]
+            } else if(this.jumlah <1000) {
+                icon = icons[1]
+            } else {
+                icon = icons[2]
+            }
+
+            const format = new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(this.harga);
+
+            const boxes = `
+                <div class="boxes bg-white shadow-md p-3 rounded-lg hover:bg-[#dcdcdc] transition-all duration-150 cursor-pointer">
+                    <p class="text-center">${this.jumlah} Diamons</p>
+                    <img src='${icon}' width='50'>
+                    <p>${format}</p>
+                </div>
+            `
+
+            box.innerHTML += boxes
+        }
+    }
+
+    const lists = [
+        new Topup(3, 1234),
+        new Topup(5, 1546),
+        new Topup(15, 3265),
+        new Topup(59, 16365),
+        new Topup(80, 22544),
+        new Topup(100, 31589),
+        new Topup(258, 271995),
+        new Topup(1000, 282799),
+        new Topup(5000, 1337587),
+        new Topup(10000, 2536727)
+    ]
+
+    lists.forEach(list => {
+      list.update()
+      console.log()
+    })
+
+    barangList.addEventListener('click', function (event) {
+      if (event.target.closest('.boxes')) {
+            const allPayments = document.querySelectorAll('.boxes');
+            allPayments.forEach((payment) => payment.classList.remove('border-2', 'border-blue-400', 'selected'));
+
+            const selectedPayment = event.target.closest('.boxes');
+            selectedPayment.classList.add('border-2', 'border-blue-400', 'selected');
+        }
+    });
+  </script>
 </body>
 </html>

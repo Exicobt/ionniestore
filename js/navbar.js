@@ -55,7 +55,8 @@ function searchGame(games) {
 
             if (filteredGames.length > 0) {
                 filteredGames.forEach(item => {
-                    const results = document.createElement('div')
+                    const results = document.createElement('a')
+                    results.setAttribute('href', `./html/${item.name.replaceAll(' ', '-')}.html`)
                     results.classList.add('overflow-hidden', 'flex', 'items-center', 'px-5', 'my-3', 'py-1', 'hover:bg-[#00000038]', 'cursor-pointer', 'transition-all', 'duration-100')
 
                     results.innerHTML = `

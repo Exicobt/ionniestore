@@ -26,23 +26,19 @@
       }
     }
   </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="../css/search.css">
   <style>
-    
+    body {
+      transition: margin;
+    }
   </style>
 </head>
-<body class="bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
+<body class="overflow-x-hidden bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
   <header class="fixed top-0 left-0 right-0 w-full min-h-16 bg-[rgb(255,255,255)] flex items-center justify-center z-[997] box-border transition-all duration-100 ease shadow-sm ">
     <nav class="relative flex w-full px-5 items-center justify-between text-black">
       <a href="../index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
@@ -84,33 +80,21 @@
     <div class="overlay fixed inset-0 bg-black opacity-50 z-[998] hidden"></div>
   </header>
 
-  <section class="relative mt-24 md:px-5 lg:px-5 xl:px-5">
-    <div class="swiper max-h-[500px] mb-10 cursor-pointer">
-      <div class="swiper-wrapper">
-        <img src="img/banner-promo/1.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
-        <img src="img/banner-promo/2.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
-        <img src="img/banner-promo/3.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
-        <img src="img/banner-promo/4.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
-        <img src="img/banner-promo/5.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
-        <img src="img/banner-promo/6.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
-      </div>
-      <div class="swiper-pagination"></div>
-    
-      <div class="swiper-button-prev w-8 h-8 bg-black/20 rounded-full"></div>
-      <div class="swiper-button-next w-8 h-8 bg-black/20 rounded-full"></div>
-    
-      <div class="swiper-scrollbar"></div>
-    </div>
-
-    <div class="m-auto w-full px-5 md:px-0 lg:px-0 xl:px-0">
-      <h3 class="text-black text-xl xl:text-3xl">All Games</h3>
-      <div class="card card-all-games grid mt-5 grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
-
-      <h3 class="text-black text-xl mt-20 xl:text-3xl">Mobile Games</h3>
-      <div class="card card-mobile-games mt-5 grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
-
-      <h3 class="text-black text-xl mt-20 xl:text-3xl">PC Games</h3>
-      <div class="card card-pc-games mt-5 grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
+  <section class="relative mt-24 px-5 flex justify-center items-center">
+    <div class="sign-up bg-white/50 w-full max-w-[500px] h-[600px] rounded-xl shadow-md backdrop-blur-md px-20 py-10">
+      <h1 class="text-2xl text-center">SIGN UP</h1>
+        <form action="#" class="w-full flex flex-col mt-14 gap-6">
+          <input type="text" class="bg-transparent border-b-2 border-black outline-none px-2 py-3 placeholder:text-black" placeholder="email" required>
+          <input type="text" class="bg-transparent border-b-2 border-black outline-none px-2 py-3 placeholder:text-black" placeholder="username" required>
+          <input type="password" class="password-sign-up bg-transparent border-b-2 border-black outline-none px-2 py-3 placeholder:text-black" placeholder="password" required>
+          <input type="password" class="password-confirm bg-transparent border-b-2 border-black outline-none px-2 py-3 placeholder:text-black" placeholder="confirm password" required>
+          <p class="text-sm flex gap-2">
+            <input type="checkbox" class="show-password">
+            show password
+          </p>
+          <button class="submit bg-[#89abae] px-10 py-2 font-medium text-white/80 rounded-full transition-all duration-100 hover:bg-[#b5c6e0] hover:text-black">SIGN UP</button>
+          <p class="question">Already have an acoount? <a href="login.html">Login</a></p>
+        </form>
     </div>
   </section>
 
@@ -120,9 +104,9 @@
       <div class="text-start">
         <h3 class="font-bold mb-2">PETA SITUS</h3>
         <div class="flex flex-col text-black/70">
-          <a href="./html/login.html">Masuk</a>
-          <a href="./html/sign-up.html">Daftar</a>
-          <a href="./html/promo.html">Promo</a>
+          <a href="login.html">Masuk</a>
+          <a href="#">Daftar</a>
+          <a href="../html/promo.html">Promo</a>
         </div>
       </div>
       <div>
@@ -151,7 +135,44 @@
   <script>
     feather.replace();
   </script>
-  <script type="module" src="script.js"></script>
-  <script type="module" src="js/navbar.js"></script>
+  <script type="module" src="../js/navbar.js"></script>
+  <script>
+    const signUp = document.querySelector('.sign-up')
+    const passwordSign = document.querySelector('.password-sign-up')
+    const passwordConfirm = document.querySelector('.password-confirm')
+    const showPassword = document.querySelector('.show-password')
+    const submit = document.querySelector('.submit')
+
+    showPassword.addEventListener('change', ()=> {
+        if(showPassword.checked) {
+            passwordSign.type = 'text'
+            passwordConfirm.type = 'text'
+        } else {
+            passwordSign.type = 'password'
+            passwordConfirm.type = 'password'
+        }
+    })
+
+    document.querySelector('form').addEventListener('submit', (e)=> {
+        e.preventDefault()
+
+        if(passwordSign.value !== passwordConfirm.value) {
+            Swal.fire({
+                title: "Error",
+                text: "Password tidak sama!",
+                icon: "error"
+            })
+        } else {
+            Swal.fire({
+                title: "Good job!",
+                text: "Login Berhasil!",
+                icon: "success"
+            })
+            setTimeout(() => {
+                document.location = '../index.html'
+            }, 3000);
+        }
+    })
+    </script>
 </body>
 </html>

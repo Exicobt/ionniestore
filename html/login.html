@@ -26,7 +26,7 @@
       }
     }
   </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +41,7 @@
 <body class="overflow-x-hidden bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
   <header class="fixed top-0 left-0 right-0 w-full min-h-16 bg-[rgb(255,255,255)] flex items-center justify-center z-[997] box-border transition-all duration-100 ease shadow-sm ">
     <nav class="relative flex w-full px-5 items-center justify-between text-black">
-      <a href="index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
+      <a href="../index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
       <ul class="flex items-center gap-2 xl:gap-10">
         <li class="hover:bg-[#00000029] rounded-full transition duration-200">
            <div class="search-btn flex xl:xl:rounded-full xl:h-10">
@@ -51,7 +51,7 @@
             <div class="search-input absolute hidden bg-[rgb(255,255,255)] w-full left-0 right-0 -bottom-[70px] px-6 pt-0 pb-5 xl:bg-transparent xl:static xl:px-2">
               <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-[rgb(83,83,83)] bg-white rounded-lg placeholder:text-[rgb(83,83,83)] animate-fade-in xl:bg-transparent">
               <div class="search-result-field relative w-full z-10">
-                <div class="field-2 absolute w-full bg-red-400 mt-5 rounded-lg max-h-40 overflow-auto"></div>
+                <div class="field-2 absolute w-full bg-white mt-5 rounded-lg max-h-40 overflow-auto"></div>
               </div>
             </div>
            </div>
@@ -80,6 +80,23 @@
     <div class="overlay fixed inset-0 bg-black opacity-50 z-[998] hidden"></div>
   </header>
 
+  <section class="relative mt-24 px-5 flex justify-center items-center">
+    <div class="login bg-white/50 w-full max-w-[500px] h-[550px] rounded-xl shadow-md backdrop-blur-md px-20 py-10">
+      <h1 class="text-2xl text-center">LOGIN</h1>
+      <form class="w-full flex flex-col mt-14 gap-6">
+        <input type="text" class="username bg-transparent border-b-2 border-black outline-none px-2 py-3 placeholder:text-black" placeholder="username" required>
+        <input type="password" class="password-login bg-transparent border-b-2 border-black outline-none px-2 py-3 placeholder:text-black" placeholder="password" required>
+        <p class="text-sm flex gap-2">
+          <input type="checkbox" class="show-password">
+          show password
+        </p>
+        <a href="#">Forget password?</a>
+        <button class=" bg-[#89abae] px-10 py-2 font-medium text-white/80 rounded-full transition-all duration-100 hover:bg-[#b5c6e0] hover:text-black">LOGIN</button>
+        <p class="question">Dont have an acoount? <a href="sign-up.html">sign up</a></p>
+      </form>
+    </div>
+  </section>
+
   <footer class="bg-[#ff9900] mt-24 px-5 py-20 box-content">
     <div class="flex flex-col lg:flex-row justify-start gap-10">
       <div class=" text-white text-start font-bold text-3xl xl:text-2xl">ionniestore.id</div>
@@ -87,7 +104,8 @@
         <h3 class="font-bold mb-2">PETA SITUS</h3>
         <div class="flex flex-col text-black/70">
           <a href="#">Masuk</a>
-          <a href="#">Daftar</a>
+          <a href="sign-up.html">Daftar</a>
+          <a href="../html/promo.html">Promo</a>
         </div>
       </div>
       <div>
@@ -117,6 +135,35 @@
     feather.replace();
   </script>
   <script type="module" src="../js/navbar.js"></script>
-  <script type="module" src="../js/mobile-legends.js"></script>
+  <script>
+    const login = document.querySelector('.login')
+    const signUp = document.querySelector('.sign-up')
+    const passwordLogin = document.querySelector('.password-login')
+    const showPassword = document.querySelector('.show-password')
+
+    showPassword.addEventListener('change', ()=> {
+        if(showPassword.checked) {
+            passwordLogin.type = 'text'
+            passwordSign.type = 'text'
+            passwordConfirm.type = 'text'
+        } else {
+            passwordLogin.type = 'password'
+            passwordSign.type = 'password'
+            passwordConfirm.type = 'password'
+        }
+    })
+
+    document.querySelector('form').addEventListener('submit', (e)=> {
+      e.preventDefault()
+      Swal.fire({
+        title: "Good job!",
+        text: "Login Berhasil!",
+        icon: "success"
+      })
+      setTimeout(() => {
+        document.location = '../index.html'
+      }, 3000);
+    })
+  </script>
 </body>
 </html>

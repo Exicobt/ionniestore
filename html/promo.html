@@ -30,14 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="../css/search.css">
   <style>
     
   </style>
@@ -45,7 +38,7 @@
 <body class="bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
   <header class="fixed top-0 left-0 right-0 w-full min-h-16 bg-[rgb(255,255,255)] flex items-center justify-center z-[997] box-border transition-all duration-100 ease shadow-sm ">
     <nav class="relative flex w-full px-5 items-center justify-between text-black">
-      <a href="index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
+      <a href="../index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore</a>
       <ul class="flex items-center gap-2 xl:gap-10">
         <li class="hover:bg-[#00000029] rounded-full transition duration-200">
            <div class="search-btn flex xl:xl:rounded-full xl:h-10">
@@ -55,7 +48,7 @@
             <div class="search-input absolute hidden bg-[rgb(255,255,255)] w-full left-0 right-0 -bottom-[70px] px-6 pt-0 pb-5 xl:bg-transparent xl:static xl:px-2">
               <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-[rgb(83,83,83)] bg-white rounded-lg placeholder:text-[rgb(83,83,83)] animate-fade-in xl:bg-transparent">
               <div class="search-result-field relative w-full z-10">
-                <div class="field-2 absolute w-full bg-red-400 mt-5 rounded-lg max-h-40 overflow-auto"></div>
+                <div class="field-2 absolute w-full bg-white mt-5 rounded-lg max-h-40 overflow-auto"></div>
               </div>
             </div>
            </div>
@@ -66,12 +59,12 @@
           </span>
           <div class="menu fixed z-[999] h-screen w-[75%] max-w-[20rem] bg-white right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
             <div class="py-20 w-full lg:py-0 xl:py-0 flex flex-col lg:flex-row">
-              <a href="./html/promo.html">
+              <a href="../html/promo.html">
                 <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
                     <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">promo</button>
                 </div>
               </a>
-              <a href="./html/login.html">
+              <a href="../html/login.html">
                 <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
                     <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">masuk</button>
                 </div>
@@ -84,18 +77,21 @@
     <div class="overlay fixed inset-0 bg-black opacity-50 z-[998] hidden"></div>
   </header>
 
-  <section class="relative mt-24 md:px-5 lg:px-5 xl:px-5">
-    
+  <section class="relative mt-24 px-5">
+    <h3 class="text-black text-xl xl:text-3xl">Daftar Promo 🔥</h3>
+    <div class="promo-container w-full grid md:grid-cols-2 lg:grid-cols-3 place-items-center gap-5 pt-5">
+    </div>
   </section>
 
   <footer class="bg-[#ff9900] mt-24 px-5 py-20 box-content">
     <div class="flex flex-col lg:flex-row justify-start gap-10">
-      <div class=" text-white text-start font-bold text-3xl xl:text-2xl">ionniestore.id</div>
+      <a href="#" class=" text-white text-start font-bold text-3xl xl:text-2xl">ionniestore</a>
       <div class="text-start">
         <h3 class="font-bold mb-2">PETA SITUS</h3>
         <div class="flex flex-col text-black/70">
           <a href="../html/login.html">Masuk</a>
-          <a href="../html/login.html">Daftar</a>
+          <a href="../html/sign-up.html">Daftar</a>
+          <a href="../html/promo.html">Promo</a>
         </div>
       </div>
       <div>
@@ -124,7 +120,7 @@
   <script>
     feather.replace();
   </script>
-  <script type="module" src="script.js"></script>
-  <script type="module" src="js/navbar.js"></script>
+  <script type="module" src="../js/navbar.js"></script>
+  <script src="../js/promo.js"></script>
 </body>
 </html>
