@@ -38,38 +38,44 @@
     }
   </style>
 </head>
-<body class="overflow-x-hidden bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
-  <header class="fixed top-0 left-0 right-0 w-full min-h-16 bg-[rgb(255,255,255)] flex items-center justify-center z-[997] box-border transition-all duration-100 ease shadow-sm ">
-    <nav class="relative flex w-full px-5 items-center justify-between text-black">
+<body class="overflow-x-hidden bg-gradient-to-r from-[#3a5776] to-[#14395a] font-kanit min-h-screen relative">
+  <header class="fixed top-0 left-0 right-0 w-full min-h-16 bg-[#1e456f] shadow-lg shadow-[#6fb5dd] flex items-center justify-center z-[997] box-border transition-all duration-100 ease">
+    <nav class="relative flex w-full px-5 items-center justify-between text-white">
       <a href="../index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
       <ul class="flex items-center gap-2 xl:gap-10">
         <li class="hover:bg-[#00000029] rounded-full transition duration-200">
            <div class="search-btn flex xl:xl:rounded-full xl:h-10">
             <span class="search-icon p-3 inline-flex z-10">
-              <i class="fas fa-search"></i>
+              <i class="fas fa-search text-white"></i>
             </span>
-            <div class="search-input absolute hidden bg-[rgb(255,255,255)] w-full left-0 right-0 -bottom-[70px] px-6 pt-0 pb-5 xl:bg-transparent xl:static xl:px-2">
-              <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-[rgb(83,83,83)] bg-white rounded-lg placeholder:text-[rgb(83,83,83)] animate-fade-in xl:bg-transparent">
+            <div class="search-input absolute hidden bg-[#1e456f] w-full left-0 right-0 -bottom-[70px] px-6 pt-0 pb-5 xl:bg-transparent xl:static xl:px-2">
+              <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-white/80 bg-transparent rounded-lg placeholder:text-[rgb(200,200,200)] animate-fade-in xl:bg-transparent">
               <div class="search-result-field relative w-full z-10">
-                <div class="field-2 absolute w-full bg-white mt-5 rounded-lg max-h-40 overflow-auto"></div>
+                <div class="field-2 absolute w-full bg-[#1e456f] shadow-xl shadow-[#2eb2ff] mt-5 rounded-lg max-h-40 overflow-auto"></div>
               </div>
             </div>
            </div>
         </li>
         <li class="hover:bg-[#00000029] rounded-full transition duration-200 lg:rounded-full xl:rounded-full xl:hover:bg-transparent lg:hover:bg-transparent">
           <span class="hamburger-btn inline-flex items-center p-2 xl:hidden lg:hidden">
-            <i data-feather="menu" class="text-black"></i>
+            <i data-feather="menu"></i>
           </span>
-          <div class="menu fixed z-[999] h-screen w-[75%] max-w-[20rem] bg-white right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
+          <div class="menu fixed z-[999] h-screen w-[75%] max-w-[20rem] bg-[#1e456f] right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
             <div class="py-20 w-full lg:py-0 xl:py-0 flex flex-col lg:flex-row">
-              <a href="../html/promo.html">
+              <a href="./html/promo.html">
                 <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
-                    <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">promo</button>
+                    <button class="w-full py-5 flex items-center justify-center gap-2 text-white font-medium uppercase text-sm lg:w-28 lg:p-2 lg:rounded-full t" id="login">
+                      <i data-feather="tag" class="w-5"></i>
+                      <span>promo</span>
+                    </button>
                 </div>
               </a>
-              <a href="../html/login.html">
+              <a href="./html/login.html">
                 <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
-                    <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">masuk</button>
+                    <button class="w-full py-5 flex items-center justify-center gap-2 text-white font-medium uppercase text-sm lg:w-28 lg:p-2 lg:rounded-full" id="login">
+                      <i data-feather="log-in" class="w-5"></i>
+                      <span>masuk</span>
+                    </button>
                 </div>
               </a>
             </div>
@@ -80,73 +86,139 @@
     <div class="overlay fixed inset-0 bg-black opacity-50 z-[998] hidden"></div>
   </header>
 
-  <section class="relative mt-16">
-    <img src="../img/banner-game/Mlbb.jpg" alt="Mobile legend" class="min-w-full max-h-[500px] blur-sm ">
-    <div class="translate-y-[-50%] flex">
-        <img src="../img/icon-game/ml.jpg" alt="Mobile Legend" class="w-28 md:w-32 lg:w-40 rounded-md mx-5">
-        <div class="flex flex-col items-start justify-center gap-5">
-            <h1 class="text-white text-xl">Mobile Legends</h1>
-            <p>Moba, PvP</p>
+  <section class="relative mt-20">
+    <div class="flex flex-col lg:flex-row justify-center">
+      <div class="lg:max-w-[40%]">
+        <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 rounded-xl overflow-hidden shadow-2xl shadow-[#2eb2ff] mb-14">
+          <img src="../img/banner-promo/1.jpg" alt="Mobile legend" class="w-full max-h-[500px] rounded-xl">
         </div>
-    </div>
-    <div class="mx-5 px-5 py-3 pb-10 bg-white shadow-md rounded-xl">
-        <h2 class="text-lg font-semibold text-gray-700 mb-4">Masukkan User:</h2>
-            <div class="flex gap-4">
-                <input type="text" inputmode="numeric" placeholder=" User ID" 
-                    class="w-full p-3 border rounded-md outline-none ">
-                <input type="text" inputmode="numeric" maxlength="4" placeholder="Zone ID" 
-                    class="w-full p-3 border rounded-md outline-none ">
+        <div class="flex flex-col mx-5 md:mx-10 lg:mx-5 xl:mx-5 p-5 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
+          <div class="flex gap-5 border-b border-white shadow-sm pb-8">
+            <div>
+              <img src="../img/icon-game/ml.jpg" alt="Mobile Legend" class="w-24 md:w-32 lg:w-40 rounded-md">
             </div>
-            <div class="flex gap-4">
-                <p class="w-full opacity-50">(1234567890)</p>
-                <p class="w-full opacity-50">(1234)</p>
+            <div class="flex flex-col justify-center box-border gap-5">
+                <h1 class="text-white text-xl lg:text-3xl font-semibold">Mobile Legends</h1>
+                <div class="grid grid-cols-3">
+                  <p class="flex gap-2 text-xl text-white justify-center items-center px-2 border-r border-white">
+                    5.0
+                    <i data-feather="star" class="w-7"></i>
+                  </p>
+                  <p class="flex flex-col gap-2 text-white text-[0.625rem] justify-center items-center px-3 border-r border-white text-center">
+                    <i data-feather="headphones" class="w-7"></i>
+                    Pelayanan Cepat
+                  </p>
+                  <p class="flex flex-col gap-2 text-white text-[0.625rem] justify-center items-center px-2 text-center">
+                    <i data-feather="shield" class="w-7"></i>
+                    Aman
+                  </p>
+                </div>
             </div>
-    </div>
-
-    <div class="mx-5 mt-20 px-5 py-3 pb-10 bg-white shadow-md rounded-xl">
-        <h2 class="text-lg font-semibold text-gray-700 mb-4">Pilih Nominal Topup:</h2>
-        <div class="box box-border flex flex-wrap gap-4"></div>
-    </div>
-
-    <div class="mx-5 mt-20 px-5 py-3 pb-10 bg-white shadow-md rounded-xl">
-        <h2 class="text-lg font-semibold text-gray-700 mb-4">Pilih Metode Pembayaran:</h2>
-        <div class="payment-method flex flex-wrap gap-5">
-          
-          
+          </div>
+          <p class="mt-8 text-white">Mobile Legends adalah game MOBA yang memungkinkan Anda untuk bertarung dalam tim 5v5 dengan berbagai hero unik.</p>
+          <p class="mt-8 flex flex-col text-white">
+            <span>Bagaimana Cara Topup Di Ionniestore?</span>
+            <br>
+            <span>1. Cukup Masukan User ID dan Zone ID MLBB Anda.</span>
+            <span>2. Pilih Jumlah Diamond Yang Anda inginkan.</span>
+            <span>3. Pilih Pembayaran Yang Anda Gunakan Dan Selesaikan Pembayaran.</span>
+            <span>4. Dan Diamond Akan Secara Langsung Ditambahkan Ke Akun Mobile Legends Anda.</span>
+          </p>
         </div>
+      </div>
+  
+      <div class="mt-20 lg:mt-0">
+        <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl ">
+          <h2 class="text-lg font-semibold mb-4 text-white/80">Masukkan User:</h2>
+          <div class="flex gap-4">
+            <input type="text" inputmode="numeric" placeholder=" User ID" 
+                  class="w-full p-3 text-white border rounded-md outline-none bg-transparent shadow-sm shadow-white/50" id="user-id">
+            <input type="text" inputmode="numeric" maxlength="4" placeholder="Zone ID" 
+                  class="w-full p-3 text-white border rounded-md outline-none bg-transparent shadow-sm shadow-white/50" id="zone-id">
+          </div>
+          <div class="flex mt-3 gap-4">
+              <p class="w-full opacity-50 text-white">(1234567890)</p>
+              <p class="w-full opacity-50 text-white">(1234)</p>
+          </div>
+      </div>
+  
+      <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-14 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
+          <h2 class="text-lg font-semibold text-white/80 mb-4">Pilih Nominal Topup:</h2>
+          <div class="box-diamonds box-border grid grid-cols-3 md:grid-cols-4 gap-4"></div>
+      </div>
+  
+      <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-14 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
+          <h2 class="text-lg font-semibold text-white/80 mb-4">Pilih Metode Pembayaran:</h2>
+          <div class="payment-method  grid grid-cols-3 md:grid-cols-4 gap-4"></div>
+      </div>
+  
+      <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-14 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
+        <h2 class="text-lg font-semibold text-white/80 mb-4">Kode Promo:</h2>
+        <div>
+          <input type="text" placeholder="Kode promo" class="promo-input w-full p-3 border rounded-md outline-none bg-transparent text-white">
+          <p class="valid-promo mt-2"></p>
+          <button class="check-promo bg-[#1d8ad7] px-5 py-2 mt-5 rounded-full text-white hover:bg-[#23a3ff] transition-all duration-200">Cek Kode Promo</button>
+        </div>
+      </div>
+  
+      <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-14 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
+        <h2 class="text-lg font-semibold text-white/80 mb-4">Email:</h2>
+        <div>
+          <input type="text" placeholder="Email (opsional)" class="w-full p-3 border rounded-md outline-none bg-transparent text-white/80">
+        </div>
+      </div>
+  
+      <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-14 flex flex-col px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl text-white">
+        <h2 class="text-lg font-semibold text-white/80 mb-4">Detail Pesanan:</h2>
+        <div class="detail-pesanan flex justify-between">
+          <div class="flex flex-col gap-2 text-sm">
+            <p>Harga Item:</p>
+            <p>Admin:</p>
+            <p>Diskon:</p>
+            <p>Total Harga:</p>
+          </div>
+          <div class="flex flex-col gap-2 text-sm">
+            <p class="harga-item tracking-widest">Rp 0</p>
+            <p class="pajak tracking-widest">Rp 0</p>
+            <p class="promo tracking-widest">Rp 0</p>
+            <p class="total-harga tracking-widest">Rp 0</p>
+          </div>
+        </div>
+        <button class="order bg-[#1d8ad7] px-10 py-2 mt-5 rounded-full text-white hover:bg-[#23a3ff] transition-all duration-200 self-end">Pesan</button>
+      </div>
     </div>
   </section>
 
-  <footer class="bg-[#ff9900] mt-24 px-5 py-20 box-content">
+  <footer class="bg-[#1e456f] text-white mt-24 px-5 py-20 box-content">
     <div class="flex flex-col lg:flex-row justify-start gap-10">
       <div class=" text-white text-start font-bold text-3xl xl:text-2xl">ionniestore.id</div>
       <div class="text-start">
         <h3 class="font-bold mb-2">PETA SITUS</h3>
         <div class="flex flex-col text-black/70">
-          <a href="login.html">Masuk</a>
-          <a href="#">Daftar</a>
-          <a href="../html/promo.html">Promo</a>
+          <a href="login.html" class="text-white">Masuk</a>
+          <a href="login.html" class="text-white">Daftar</a>
+          <a href="promo.html" class="text-white">Promo</a>
         </div>
       </div>
       <div>
         <div>
           <h3 class="font-bold mb-2">AREA</h3>
           <div class="flex text-black/70 gap-2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Indonesia_%28physical_version%29.svg" alt="indonesia" class="rounded-full w-5 h-5">
-            Indonesia
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Indonesia_%28physical_version%29.svg" alt="indonesia" class="rounded-full w-5 h-5 ">
+            <p class="text-white">Indonesia</p>
           </div>
         </div>
       </div>
       <div>
         <h3 class="font-bold mb-2">METODE PEMBAYARAN</h3>
-        <div class="flex flex-wrap gap-2">
-          <img src="../img/icon-pembayaran/gopay.png" alt="gopay" width="70">
-          <img src="../img/icon-pembayaran/dana.png" alt="dana" width="70">
-          <img src="../img/icon-pembayaran/ovo.png" alt="ovo" width="70">
-          <img src="../img/icon-pembayaran/shopeepay.png" alt="spay" width="70">
-          <img src="../img/icon-pembayaran/qris.png" alt="qris" width="70">
-          <img src="../img/icon-pembayaran/indomaret.png" alt="indomaret" width="70">
-        </div>
+          <div class="flex gap-2">
+            <img src="../img/icon-pembayaran/gopay.png" alt="gopay" width="50" class="rounded-lg">
+            <img src="../img/icon-pembayaran/dana.png" alt="dana" width="50" class="rounded-lg">
+            <img src="../img/icon-pembayaran/ovo.png" alt="ovo" width="50" class="rounded-lg">
+            <img src="../img/icon-pembayaran/shopeepay.png" alt="spay" width="50" class="rounded-lg">
+            <img src="../img/icon-pembayaran/qris.png" alt="qris" width="50" class="rounded-lg">
+            <img src="../img/icon-pembayaran/indomaret.png" alt="indomaret" width="50" class="rounded-lg">
+          </div>
       </div>
     </div>
   </footer>
@@ -158,126 +230,158 @@
   <script>
     const icons = ['https://s3-alpha-sig.figma.com/img/6121/d8d3/f18f0f1cad745a09fff601908fd0b8ff?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZThf3DIeysKZb0WZXmtnzudWfA4zE2Jo~JaaX8Q13b7CGAo3g6SwxH1Mg9reLjgbbw0hvk7DhnZp-K7YPP10LUyOg6i-QOHMyRjpKi0x53Pcpvmq7KnArOPcmCcOPmtpqvwdQ-Clx7VyNZYcgw71lgI6Y~n0lewukcSJ2RYpagQgA75QtLxmNbTldEvt12cxMYnuemWTbB8seF5NXv0yBmaygfoccxYvEWJzbk3ywzzib4n5MA3bXRHeZAL-XHENLazYhcOppJ~O16VYaRW3BVR-YjJF~0dSi9KmmcvpF-WlSW3LHL3ww~kMCnD6sin01R0J1qBQ~a3-KDiMSJ~ndA__', 'https://s3-alpha-sig.figma.com/img/b8a6/175a/ca2be2870a39cf9f546b13643dab1ab0?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZKP6x~91csQCtYemUUC4ar2psudeNYwfiESs3NYCA2KaQ8LO7ShgtZ7L4uWaz9EikJJHOtpqBUqUn80mluTUoNxOo5ZK5PIkdcqIsR2Qie3ZePteP7C8oZ5gzDgqSCO25PWzXmEOFJQziNGznt9bQ1UcPLrbnTbp33Rkwd~XIo7DqnDLUPbkHDcLKuzV01prpmFKmCZp1~bzcaxSQoPaHYygWtHDKfIAMbjwEgYRiFxPYBW6DLnMwELR1J7YWRHIfEkoZ9n7ER-0tEt7tCiTX3bnoztKsDgrQUq4ji9XhLfEnxIH3tym7XldBOVoHoWuZwRY4Fmo4qDwUehIGjkyQ__', 'https://s3-alpha-sig.figma.com/img/d1dd/83d4/cbcd4291421a9cc4e9b887becd328d89?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nKpw4ksMTDxvQs3qyqIaPToTB5aBeYm3sUsdgncJs68V2EvkNXk6W4JL3ZNZaGs7GV4GMHMYenqH7JH9jsxPK3iICWxnWOeAu7aiymd3qa1tFwbxIQNA~uzrHe8Q-PPZfuelQ6IlvuNeKNWEqS~LH0YRCgo0qDLmXKhN7X936NcDRcxx7wmbVJBZP9BZu0-TRcLbp9JlnBMF~979NmQ-ZzkFZtpRD8HRMKhv1a5vuKQIyyg5hk0yWtQiawxM1qXNvYmqrcnLxTj2ciA9fxC3u9Bo2npvHAyqn360S0CMkD8UT6xC-KaWRHhxyI9y7clEGEviLKy7QEva76EO1SO3PA__']
 
-    const box = document.querySelector('.box')
-    const barangList = document.querySelector('.box');
+    const boxDiamonds = document.querySelector('.box-diamonds')
     const paymentMEthod = document.querySelector('.payment-method')
-    const totalHarga = 0
+    const userID = document.getElementById('user-id')
+    const zoneID = document.getElementById('zone-id')
+    const itemPrices = document.querySelector('.harga-item')
+    const tax = document.querySelector('.pajak')
+    const discountAmount = document.querySelector('.promo')
+    const orderDetails = document.querySelector('.total-harga')
+    const promoInput = document.querySelector('.promo-input')
+    const validPromo = document.querySelector('.valid-promo')
+    const checkPromo = document.querySelector('.check-promo')
+    const order = document.querySelector('.order')
+
+    let itemPrice = 0
+    let paymentTax = 0
+    let discount = 0
+    let readyOrder = false
 
     const paymentMethods = [
-    { name: 'Gopay', tax: 0.02, icon: '../img/icon-pembayaran/gopay.png' },
-    { name: 'Dana', tax: 0.015, icon: '../img/icon-pembayaran/dana.png' },
-    { name: 'OVO', tax: 0.025, icon: '../img/icon-pembayaran/ovo.png' },
-    { name: 'ShopeePay', tax: 0.03, icon: '../img/icon-pembayaran/shopeepay.png' },
-    { name: 'Indomaret', tax: 0.04, icon: '../img/icon-pembayaran/indomaret.png' },
-    { name: 'Qris', tax: 0.02, icon: '../img/icon-pembayaran/qris.png' }
-];
+      { name: 'Gopay', tax: 0.1, icon: '../img/icon-pembayaran/gopay.png' },
+      { name: 'Dana', tax: 0.1, icon: '../img/icon-pembayaran/dana.png' },
+      { name: 'OVO', tax: 0.1, icon: '../img/icon-pembayaran/ovo.png' },
+      { name: 'ShopeePay', tax: 0.1, icon: '../img/icon-pembayaran/shopeepay.png' },
+      { name: 'Indomaret', tax: 0.2, icon: '../img/icon-pembayaran/indomaret.png' },
+      { name: 'Qris', tax: 0.1, icon: '../img/icon-pembayaran/qris.png' }
+    ];
 
-    paymentMethods.forEach((method) => {
-        const paymentHTML = `
-            <div class="payment-box bg-white shadow-md p-3 rounded-lg hover:bg-[#dcdcdc] transition-all duration-150 cursor-pointer flex flex-col gap-10 items-center gap-2">
-                <img src="${method.icon}" width='100'>
-                <p>${method.name}</p>
-            </div>
-        `;
-        paymentMEthod.innerHTML += paymentHTML;
-    });
+    let icon = ''
 
-    paymentMEthod.addEventListener('click', (event) => {
-        if (event.target.closest('.payment-box')) {
-            const allPayments = document.querySelectorAll('.payment-box');
-            allPayments.forEach((payment) => payment.classList.remove('border-2', 'border-blue-400', 'selected'));
+    const diamonds = [
+      {count: 3, price: 1234},
+      {count: 5, price: 1546},
+      {count: 15, price: 3265},
+      {count: 59, price: 16365},
+      {count: 80, price: 22544},
+      {count: 100, price: 31589},
+      {count: 258, price: 271995},
+      {count: 1000, price: 282799},
+      {count: 5000, price: 1337587},
+      {count: 10000, price: 2536727},
+    ]  
 
-            const selectedPayment = event.target.closest('.payment-box');
-            selectedPayment.classList.add('border-2', 'border-blue-400', 'selected');
-            calculateTotal();
-        }
-    });
-
-    function calculateTotal() {
-        const selectedItem = document.querySelector('.boxes.selected');
-        const selectedPayment = document.querySelector('.payment-box.selected');
-
-        if (selectedItem && selectedPayment) {
-            const itemPrice = parseInt(selectedItem.querySelector('p:last-child').innerText.replace(/[^\d]/g, ''));
-            const paymentName = selectedPayment.querySelector('p').innerText;
-
-            const paymentMethod = paymentMethods.find(method => method.name === paymentName);
-            const tax = paymentMethod.tax;
-
-            const totalPrice = itemPrice + (itemPrice * tax);
-            Swal.fire({
-                title: 'Total Harga',
-                text: `Total: ${new Intl.NumberFormat('id-ID', {
-                    style: 'currency',
-                    currency: 'IDR'
-                }).format(totalPrice)}`,
-                icon: 'info'
-            });
-        }
-    }
-
-    class Topup {
-        constructor(jumlah, harga) {
-            this.jumlah = jumlah
-            this.harga = harga
-        }
-
-        update() {
-            let icon = ''
-
-            if(this.jumlah < 100) {
-                icon = icons[0]
-            } else if(this.jumlah <1000) {
-                icon = icons[1]
-            } else {
-                icon = icons[2]
-            }
-
-            const format = new Intl.NumberFormat('id-ID', {
-                style: 'currency',
-                currency: 'IDR',
-                minimumFractionDigits: 0
-            }).format(this.harga);
-
-            const boxes = `
-                <div class="boxes bg-white shadow-md p-3 rounded-lg hover:bg-[#dcdcdc] transition-all duration-150 cursor-pointer">
-                    <p class="text-center">${this.jumlah} Diamons</p>
-                    <img src='${icon}' width='50'>
-                    <p>${format}</p>
-                </div>
-            `
-
-            box.innerHTML += boxes
-        }
-    }
-
-    const lists = [
-        new Topup(3, 1234),
-        new Topup(5, 1546),
-        new Topup(15, 3265),
-        new Topup(59, 16365),
-        new Topup(80, 22544),
-        new Topup(100, 31589),
-        new Topup(258, 271995),
-        new Topup(1000, 282799),
-        new Topup(5000, 1337587),
-        new Topup(10000, 2536727)
+    const promo = [
+      {promoName: 'SHARONLY27', promoValue: 0.5, promoCategory: 'Diskon'}
     ]
 
-    lists.forEach(list => {
-      list.update()
-      console.log()
+    function format(format) {
+      return new Intl.NumberFormat('id-ID', {
+        style:"currency",
+        currency:"IDR"
+      }).format(format)
+    }
+
+    paymentMethods.forEach(payment => {
+      paymentMEthod.innerHTML += `
+        <div class="payment flex flex-col justify-between gap-3 bg-[#26588e] text-white shadow-md p-3 rounded-lg hover:bg-[#367ec9] hover:border hover:border-blue-400 hover:shadow-lg hover:shadow-[#367ec9] transition-all duration-150 cursor-pointer" data-tax='${payment.tax}'>
+          <img src='${payment.icon}' width='50' class='rounded-lg'>
+          <p class='text-sm'>${payment.name}</p>
+          <p class='text-sm'>Admin +${new Intl.NumberFormat('id-ID', {style:"percent", minimumFractionDigits: 2, maximumFractionDigits: 2}).format(payment.tax)}</p>
+        </div>
+      `
     })
 
-    barangList.addEventListener('click', function (event) {
-      if (event.target.closest('.boxes')) {
-            const allPayments = document.querySelectorAll('.boxes');
-            allPayments.forEach((payment) => payment.classList.remove('border-2', 'border-blue-400', 'selected'));
+    diamonds.forEach(item => {
+      if(item.count < 100) {
+        item.icon = icons[0]
+      } else if(item.count < 1000) {
+        item.icon = icons[1]
+      } else {
+        item.icon = icons[2]
+    }
 
-            const selectedPayment = event.target.closest('.boxes');
-            selectedPayment.classList.add('border-2', 'border-blue-400', 'selected');
+    boxDiamonds.innerHTML += `
+       <div class="diamonds bg-[#26588e] text-white shadow-md flex flex-col items-center justify-between gap-3 p-3 rounded-lg hover:bg-[#367ec9] hover:border hover:border-blue-400 hover:shadow-lg hover:shadow-[#367ec9] transition-all duration-150 cursor-pointer box-border" data-price='${item.price}'>
+          <p class='text-sm'>${item.count} Diamonds</p>
+          <img src='${item.icon}' width='30'>
+          <p class='text-sm'>${format(item.price)}</p>
+        </div>
+      `
+    })
+
+    const items = document.querySelectorAll('.diamonds')
+    const payment = document.querySelectorAll('.payment')
+
+    checkPromo.addEventListener('click', checkPromoIsValid)
+
+    items.forEach(item => {
+      item.addEventListener('click', ()=> {
+        items.forEach(i => i.classList.remove('selected', 'border-2', 'border-blue-400', '!bg-[#367ec9]'))
+        itemPrice = parseInt(item.getAttribute('data-price'))
+
+        item.classList.add('selected', 'border-2', 'border-blue-400', '!bg-[#367ec9]')
+        priceTotal()
+      })
+    })
+
+    payment.forEach(method => {
+      method.addEventListener('click', ()=> {
+        const itemselect = document.querySelector('.diamonds.selected')
+
+        if(!itemselect) {
+          alert("pilih nominal pembelian")
+        } else {
+          payment.forEach(i => i.classList.remove('selected', 'border-2', 'border-blue-400', '!bg-[#367ec9]'))
+          paymentTax = parseFloat(method.getAttribute('data-tax'))
+  
+          method.classList.add('selected', 'border-2', 'border-blue-400', '!bg-[#367ec9]')
+          priceTotal()
         }
-    });
+      })
+    })
+
+    function checkPromoIsValid() {
+      const isPromo = promoInput.value
+      promo.some(obj =>{
+        if(isPromo === obj.promoName) {
+          discount = obj.promoValue
+          validPromo.classList.remove('text-red-500')
+          validPromo.classList.add('text-green-500')
+          validPromo.innerHTML = `Selamat, Anda Mendapatkan ${obj.promoCategory} ${new Intl.NumberFormat('id-ID', {style:"percent"}).format(obj.promoValue)}!`
+        } else {
+          validPromo.classList.remove('text-green-500')
+          validPromo.classList.add('text-red-500')
+          validPromo.innerHTML = "Kode Promo Tidak Valid!"
+        }
+      })
+      priceTotal()
+    }
+
+    function priceTotal() {
+      let totalDiscount = itemPrice*discount
+
+      const total = format(itemPrice + (itemPrice*paymentTax) - totalDiscount)
+
+      itemPrices.innerHTML = format(itemPrice)
+      tax.innerHTML = format(itemPrice*paymentTax)
+      discountAmount.innerHTML = format(-totalDiscount)
+      orderDetails.innerHTML = total
+      readyOrder = true
+    }
+
+    order.addEventListener('click', ()=> {
+      if(readyOrder) {
+        Swal.fire({
+          title: "Good job!",
+          text: "Order Berhasil!",
+          icon: "success"
+        })
+      } else {
+        alert('Silahkan Pilih Pembelian Terlebih Dahulu')
+      }
+    })
   </script>
 </body>
 </html>

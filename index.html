@@ -42,38 +42,44 @@
     
   </style>
 </head>
-<body class="bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] font-kanit min-h-screen relative">
-  <header class="fixed top-0 left-0 right-0 w-full min-h-16 bg-[rgb(255,255,255)] flex items-center justify-center z-[997] box-border transition-all duration-100 ease shadow-sm ">
-    <nav class="relative flex w-full px-5 items-center justify-between text-black">
-      <a href="../index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
+<body class="bg-gradient-to-r from-[#3a5776] to-[#14395a] font-kanit min-h-screen relative">
+  <header class="fixed top-0 left-0 right-0 w-full min-h-16 bg-[#1e456f] shadow-lg shadow-[#6fb5dd] flex items-center justify-center z-[997] box-border transition-all duration-100 ease">
+    <nav class="relative flex w-full px-5 items-center justify-between text-white">
+      <a href="#" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
       <ul class="flex items-center gap-2 xl:gap-10">
         <li class="hover:bg-[#00000029] rounded-full transition duration-200">
            <div class="search-btn flex xl:xl:rounded-full xl:h-10">
             <span class="search-icon p-3 inline-flex z-10">
-              <i class="fas fa-search"></i>
+              <i class="fas fa-search text-white"></i>
             </span>
-            <div class="search-input absolute hidden bg-[rgb(255,255,255)] w-full left-0 right-0 -bottom-[70px] px-6 pt-0 pb-5 xl:bg-transparent xl:static xl:px-2">
-              <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-[rgb(83,83,83)] bg-white rounded-lg placeholder:text-[rgb(83,83,83)] animate-fade-in xl:bg-transparent">
+            <div class="search-input absolute hidden bg-[#1e456f] w-full left-0 right-0 -bottom-[70px] px-6 pt-0 pb-5 xl:bg-transparent xl:static xl:px-2">
+              <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-white/80 bg-transparent rounded-lg placeholder:text-[rgb(200,200,200)] animate-fade-in xl:bg-transparent">
               <div class="search-result-field relative w-full z-10">
-                <div class="field-2 absolute w-full bg-white mt-5 rounded-lg max-h-40 overflow-auto"></div>
+                <div class="field-2 absolute w-full bg-[#1e456f] shadow-xl shadow-[#2eb2ff] mt-5 rounded-lg max-h-40 overflow-auto"></div>
               </div>
             </div>
            </div>
         </li>
         <li class="hover:bg-[#00000029] rounded-full transition duration-200 lg:rounded-full xl:rounded-full xl:hover:bg-transparent lg:hover:bg-transparent">
           <span class="hamburger-btn inline-flex items-center p-2 xl:hidden lg:hidden">
-            <i data-feather="menu" class="text-black"></i>
+            <i data-feather="menu"></i>
           </span>
-          <div class="menu fixed z-[999] h-screen w-[75%] max-w-[20rem] bg-white right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
+          <div class="menu fixed z-[999] h-screen w-[75%] max-w-[20rem] bg-[#1e456f] right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
             <div class="py-20 w-full lg:py-0 xl:py-0 flex flex-col lg:flex-row">
               <a href="./html/promo.html">
                 <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
-                    <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">promo</button>
+                    <button class="w-full py-5 flex items-center justify-center gap-2 text-white font-medium uppercase text-sm lg:w-28 lg:p-2 lg:rounded-full t" id="login">
+                      <i data-feather="tag" class="w-5"></i>
+                      <span>promo</span>
+                    </button>
                 </div>
               </a>
               <a href="./html/login.html">
                 <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
-                    <button class="w-full py-5 text-black font-medium uppercase text-base lg:inline xl:inline lg:w-28 lg:p-2 lg:rounded-full t" id="login">masuk</button>
+                    <button class="w-full py-5 flex items-center justify-center gap-2 text-white font-medium uppercase text-sm lg:w-28 lg:p-2 lg:rounded-full" id="login">
+                      <i data-feather="log-in" class="w-5"></i>
+                      <span>masuk</span>
+                    </button>
                 </div>
               </a>
             </div>
@@ -85,7 +91,7 @@
   </header>
 
   <section class="relative mt-24 md:px-5 lg:px-5 xl:px-5">
-    <div class="swiper max-h-[500px] mb-10 cursor-pointer">
+    <div class="swiper max-h-[500px] mb-10 cursor-pointer shadow-xl rounded-lg shadow-[#2eb2ff]">
       <div class="swiper-wrapper">
         <img src="img/banner-promo/1.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
         <img src="img/banner-promo/2.jpg" alt="banner" class="swiper-slide rounded-lg max-h-[500px]">
@@ -103,47 +109,47 @@
     </div>
 
     <div class="m-auto w-full px-5 md:px-0 lg:px-0 xl:px-0">
-      <h3 class="text-black text-xl xl:text-3xl">All Games</h3>
+      <h3 class="text-white text-xl xl:text-3xl w-full py-3 text-center rounded-full border border-[#3275bc] bg-[#18456b] shadow-xl shadow-[#2eb2ff]">All Games 🔥</h3>
       <div class="card card-all-games grid mt-5 grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
 
-      <h3 class="text-black text-xl mt-20 xl:text-3xl">Mobile Games</h3>
+      <h3 class="text-white text-xl xl:text-3xl w-full p-5 text-center mt-20 rounded-full border border-[#3275bc] bg-[#18456b] shadow-xl shadow-[#2eb2ff]">Mobile Games</h3>
       <div class="card card-mobile-games mt-5 grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
 
-      <h3 class="text-black text-xl mt-20 xl:text-3xl">PC Games</h3>
+      <h3 class="text-white text-xl xl:text-3xl w-full p-5 text-center mt-20 rounded-full border border-[#3275bc] bg-[#18456b] shadow-xl shadow-[#2eb2ff]">PC Games</h3>
       <div class="card card-pc-games mt-5 grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"></div>
     </div>
   </section>
 
-  <footer class="bg-[#ff9900] mt-24 px-5 py-20 box-content">
+  <footer class="bg-[#1e456f] text-white mt-24 px-5 py-20 box-content">
     <div class="flex flex-col lg:flex-row justify-start gap-10">
       <div class=" text-white text-start font-bold text-3xl xl:text-2xl">ionniestore.id</div>
       <div class="text-start">
         <h3 class="font-bold mb-2">PETA SITUS</h3>
-        <div class="flex flex-col text-black/70">
-          <a href="./html/login.html">Masuk</a>
-          <a href="./html/sign-up.html">Daftar</a>
-          <a href="./html/promo.html">Promo</a>
+        <div class="flex flex-col">
+          <a href="html/login.html" class="text-white">Masuk</a>
+          <a href="html/login.html" class="text-white">Daftar</a>
+          <a href="./html/promo.html" class="text-white">Promo</a>
         </div>
       </div>
       <div>
         <div>
           <h3 class="font-bold mb-2">AREA</h3>
-          <div class="flex text-black/70 gap-2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Indonesia_%28physical_version%29.svg" alt="indonesia" class="rounded-full w-5 h-5">
-            Indonesia
+          <div class="flex gap-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Indonesia_%28physical_version%29.svg" alt="indonesia" class="rounded-full w-5 h-5 ">
+            <p class="text-white">Indonesia</p>
           </div>
         </div>
       </div>
       <div>
         <h3 class="font-bold mb-2">METODE PEMBAYARAN</h3>
-        <div class="flex flex-wrap gap-2">
-          <img src="https://antinomi.org/wp-content/uploads/2022/03/logo-gopay-vector.png" alt="gopay" width="70">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/1200px-Logo_dana_blue.svg.png" alt="dana" width="70">
-          <img src="https://www.cloudera.com/content/dam/www/marketing/images/logos/customers/ovo-logo.png" alt="ovo" width="70">
-          <img src="https://seeklogo.com/images/S/shopeepay-logo-11DACD6CCF-seeklogo.com.png" alt="spay" width="70">
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjhvTtjN1Bj37W3jTiire9jlqgP046Je6-JPvIVEMjW6avji3kH1eC5HyUDIY8q1l6z89kidy_XZz4cX7-d_rdSentSrY94naUFcRo-NhiEvMUWmevEbQz-xRdMLUFSr61dHVvbVDq58GmxM0UAIgwnfCak8KWr0wTa0UmmjdUQTTcm2pEd3YjuHtPj9Q/s2161/Logo%20QRIS.png" alt="qris" width="70">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Logo_Indomaret.png" alt="indomaret" width="70">
-        </div>
+          <div class="flex gap-2">
+            <img src="./img/icon-pembayaran/gopay.png" alt="gopay" width="50" class="rounded-lg">
+            <img src="./img/icon-pembayaran/dana.png" alt="dana" width="50" class="rounded-lg">
+            <img src="./img/icon-pembayaran/ovo.png" alt="ovo" width="50" class="rounded-lg">
+            <img src="./img/icon-pembayaran/shopeepay.png" alt="spay" width="50" class="rounded-lg">
+            <img src="./img/icon-pembayaran/qris.png" alt="qris" width="50" class="rounded-lg">
+            <img src="./img/icon-pembayaran/indomaret.png" alt="indomaret" width="50" class="rounded-lg">
+          </div>
       </div>
     </div>
   </footer>

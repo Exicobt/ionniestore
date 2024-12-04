@@ -22,7 +22,7 @@ function searchDeactive() {
     searchInput.classList.remove("active")
     searchIcon.classList.remove("active")
     searchBtn.classList.remove("active")
-    searchBtn.classList.remove("xl:bg-white")
+    searchBtn.classList.remove("xl:bg-[#1e456f]")
     document.querySelector("header").classList.remove('mb-10', 'xl:mb-0')
     searching.value = ""
     result.innerHTML = ""
@@ -33,7 +33,7 @@ searchBtn.addEventListener("click", (e)=> {
     searchActive()
 
     if(searchInput.classList.contains("active")) {
-        searchBtn.classList.add("xl:bg-white")
+        searchBtn.classList.add("xl:bg-[#1e456f")
     }
 })
 
@@ -56,19 +56,19 @@ function searchGame(games) {
             if (filteredGames.length > 0) {
                 filteredGames.forEach(item => {
                     const results = document.createElement('a')
-                    results.setAttribute('href', `./html/${item.name.replaceAll(' ', '-')}.html`)
+                    results.setAttribute('href', `../html/${item.name.replaceAll(' ', '-').toLowerCase()}.html`)
                     results.classList.add('overflow-hidden', 'flex', 'items-center', 'px-5', 'my-3', 'py-1', 'hover:bg-[#00000038]', 'cursor-pointer', 'transition-all', 'duration-100')
 
                     results.innerHTML = `
                         <img src=${item.logo} alt=${item.name} width="50" class="rounded-lg">
-                        <p class="text-black ml-5 font-medium">${item.name}</p>
+                        <p class="text-white ml-5 font-medium">${item.name}</p>
                     `;
 
                     result.appendChild(results)
                     
                 });
             } else {
-                result.innerHTML = `<p class="text-black ml-5 font-medium p-1 my-3 text-sm">Hasil pencarian tidak ditemukan</p>`
+                result.innerHTML = `<p class="text-white ml-5 font-medium p-1 my-3 text-sm">Hasil pencarian tidak ditemukan</p>`
             }
         } else {
             resultField.classList.add("hidden")
