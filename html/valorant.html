@@ -1,0 +1,377 @@
+<!doctype html>
+<html class="box-border">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+        animation: {
+          'fade-in': 'fadeIn .8s ease', 
+        },
+        keyframes: {
+          fadeIn: {
+            '0%': { opacity: '0' },
+            '100%': { opacity: '1' },
+          },
+        },
+        
+      },
+      fontFamily: {
+        'kanit': ['Kanit', 'sans-serif']
+      }
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/search.css">
+  <style>
+    body {
+      transition: margin;
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden bg-gradient-to-r from-[#3a5776] to-[#14395a] font-kanit min-h-screen relative">
+  <header class="fixed top-0 left-0 right-0 w-full min-h-16 bg-[#1e456f] shadow-lg shadow-[#6fb5dd] flex items-center justify-center z-[997] box-border transition-all duration-100 ease">
+    <nav class="relative flex w-full px-5 items-center justify-between text-white">
+      <a href="../index.html" class="relative font-bold text-xl xl:text-2xl">ionniestore.id</a>
+      <ul class="flex items-center gap-2 xl:gap-10">
+        <li class="hover:bg-[#00000029] rounded-full transition duration-200">
+           <div class="search-btn flex xl:xl:rounded-full xl:h-10">
+            <span class="search-icon p-3 inline-flex z-10">
+              <i class="fas fa-search text-white"></i>
+            </span>
+            <div class="search-input absolute hidden bg-[#1e456f] w-full left-0 right-0 -bottom-[70px] px-6 pt-0 pb-5 xl:bg-transparent xl:static xl:px-2">
+              <input type="text" placeholder="Cari Game..." class="outline-none w-full px-6 py-2 text-white/80 bg-transparent rounded-lg placeholder:text-[rgb(200,200,200)] animate-fade-in xl:bg-transparent">
+              <div class="search-result-field relative w-full z-10">
+                <div class="field-2 absolute w-full bg-[#1e456f] shadow-xl shadow-[#2eb2ff] mt-5 rounded-lg max-h-40 overflow-auto"></div>
+              </div>
+            </div>
+           </div>
+        </li>
+        <li class="hover:bg-[#00000029] rounded-full transition duration-200 lg:rounded-full xl:rounded-full xl:hover:bg-transparent lg:hover:bg-transparent">
+          <span class="hamburger-btn inline-flex items-center p-2 xl:hidden lg:hidden">
+            <i data-feather="menu"></i>
+          </span>
+          <div class="menu fixed z-[999] h-screen w-[75%] max-w-[20rem] bg-[#1e456f] right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
+            <div class="py-20 w-full lg:py-0 xl:py-0 flex flex-col lg:flex-row">
+              <a href="promo.html">
+                <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
+                    <button class="w-full py-5 flex items-center justify-center gap-2 text-white font-medium uppercase text-sm lg:w-28 lg:p-2 lg:rounded-full t" id="login">
+                      <i data-feather="tag" class="w-5"></i>
+                      <span>promo</span>
+                    </button>
+                </div>
+              </a>
+              <a href="login.html">
+                <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
+                    <button class="w-full py-5 flex items-center justify-center gap-2 text-white font-medium uppercase text-sm lg:w-28 lg:p-2 lg:rounded-full" id="login">
+                      <i data-feather="log-in" class="w-5"></i>
+                      <span>masuk</span>
+                    </button>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="overlay fixed inset-0 bg-black opacity-50 z-[998] hidden"></div>
+  </header>
+
+  <section class="relative mt-20">
+    <div class="flex flex-col lg:flex-row justify-center">
+      <div class="lg:max-w-[40%]">
+        <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 rounded-xl overflow-hidden shadow-2xl shadow-[#2eb2ff] mb-5">
+          <img src="../img/banner-promo/3.jpg" alt="Mobile legend" class="w-full max-h-[500px] rounded-xl">
+        </div>
+        <div class="flex flex-col mx-5 md:mx-10 lg:mx-5 xl:mx-5 p-5 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
+          <div class="flex gap-5 border-b border-white shadow-sm pb-8">
+            <div>
+              <img src="../img/icon-game/valorant.jpg" alt="Mobile Legend" class="w-24 md:w-32 lg:w-40 rounded-md">
+            </div>
+            <div class="flex flex-col justify-center box-border gap-5">
+                <h1 class="text-white text-xl lg:text-3xl font-semibold">Valorant</h1>
+                <div class="grid grid-cols-3">
+                  <p class="flex gap-2 text-xl text-white justify-center items-center px-2 border-r border-white">
+                    5.0
+                    <i data-feather="star" class="w-7"></i>
+                  </p>
+                  <p class="flex flex-col gap-2 text-white text-[0.625rem] justify-center items-center px-3 border-r border-white text-center">
+                    <i data-feather="headphones" class="w-7"></i>
+                    Pelayanan Cepat
+                  </p>
+                  <p class="flex flex-col gap-2 text-white text-[0.625rem] justify-center items-center px-2 text-center">
+                    <i data-feather="shield" class="w-7"></i>
+                    Aman
+                  </p>
+                </div>
+            </div>
+          </div>
+          <p class="mt-8 text-white">Valorant adalah game FPS taktis dari Riot Games yang menampilkan pertarungan tim berbasis agen dengan keterampilan unik.</p>
+          <p class="mt-8 flex flex-col text-white">
+            <span>Bagaimana Cara Topup Di Ionniestore?</span>
+            <br>
+            <span>1. Cukup Masukan User ID Valorant Anda.</span>
+            <span>2.  Pilih Jumlah Points Yang Anda inginkan.</span>
+            <span>3. Pilih Pembayaran Yang Anda Gunakan Dan Selesaikan Pembayaran.</span>
+            <span>4. Dan Points Akan Secara Langsung Ditambahkan Ke Akun Mobile Legends Anda.</span>
+          </p>
+        </div>
+      </div>
+  
+      <div class="mt-10 lg:mt-0">
+        <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl ">
+          <h2 class="text-lg font-semibold mb-4 text-white/80">Masukkan User:</h2>
+          <div class="flex gap-4">
+            <input type="text" inputmode="numeric" placeholder=" User ID" 
+                  class="w-full p-3 text-white border rounded-md outline-none bg-transparent shadow-sm shadow-white/50" id="user-id">
+          </div>
+          <div class="flex mt-3 gap-4">
+              <p class="w-full opacity-50 text-white">Masukkan User ID Anda.</p>
+          </div>
+      </div>
+  
+      <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-5 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
+          <h2 class="text-lg font-semibold text-white/80 mb-4">Pilih Nominal Topup:</h2>
+          <div class="box-diamonds box-border grid grid-cols-2 md:grid-cols-3 gap-4"></div>
+      </div>
+  
+      <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-5 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
+          <h2 class="text-lg font-semibold text-white/80 mb-4">Pilih Metode Pembayaran:</h2>
+          <div class="payment-method  grid grid-cols-2 md:grid-cols-3 gap-4"></div>
+      </div>
+  
+      <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-5 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
+        <h2 class="text-lg font-semibold text-white/80 mb-4">Kode Promo:</h2>
+        <div>
+          <input type="text" placeholder="Kode promo" class="promo-input w-full p-3 border rounded-md outline-none bg-transparent text-white">
+          <p class="valid-promo mt-2"></p>
+          <button class="check-promo bg-[#1d8ad7] px-5 py-2 mt-5 rounded-full text-white hover:bg-[#23a3ff] transition-all duration-200">Cek Kode Promo</button>
+        </div>
+      </div>
+  
+      <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-5 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
+        <h2 class="text-lg font-semibold text-white/80 mb-4">Email:</h2>
+        <div>
+          <input type="text" placeholder="Email (opsional)" class="w-full p-3 border rounded-md outline-none bg-transparent text-white/80">
+        </div>
+      </div>
+  
+      <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-5 flex flex-col px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl text-white">
+        <h2 class="text-lg font-semibold text-white/80 mb-4">Detail Pesanan:</h2>
+        <div class="detail-pesanan flex justify-between">
+          <div class="flex flex-col gap-2 text-sm">
+            <p>Harga Item:</p>
+            <p>Admin:</p>
+            <p>Diskon:</p>
+            <p>Total Harga:</p>
+          </div>
+          <div class="flex flex-col gap-2 text-sm">
+            <p class="harga-item tracking-widest">Rp 0</p>
+            <p class="pajak tracking-widest">Rp 0</p>
+            <p class="promo tracking-widest">Rp 0</p>
+            <p class="total-harga tracking-widest">Rp 0</p>
+          </div>
+        </div>
+        <button class="order bg-[#1d8ad7] px-10 py-2 mt-5 rounded-full text-white hover:bg-[#23a3ff] transition-all duration-200 self-end">Pesan</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#1e456f] text-white mt-24 px-5 py-20 box-content">
+    <div class="flex flex-col lg:flex-row justify-start gap-10">
+      <div class=" text-white text-start font-bold text-3xl xl:text-2xl">ionniestore.id</div>
+      <div class="text-start">
+        <h3 class="font-bold mb-2">PETA SITUS</h3>
+        <div class="flex flex-col text-black/70">
+          <a href="login.html" class="text-white">Masuk</a>
+          <a href="sign-up.html" class="text-white">Daftar</a>
+          <a href="promo.html" class="text-white">Promo</a>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3 class="font-bold mb-2">AREA</h3>
+          <div class="flex text-black/70 gap-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Indonesia_%28physical_version%29.svg" alt="indonesia" class="rounded-full w-5 h-5 ">
+            <p class="text-white">Indonesia</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">METODE PEMBAYARAN</h3>
+          <div class="flex gap-2">
+            <img src="../img/icon-pembayaran/gopay.png" alt="gopay" width="50" class="rounded-lg">
+            <img src="../img/icon-pembayaran/dana.png" alt="dana" width="50" class="rounded-lg">
+            <img src="../img/icon-pembayaran/ovo.png" alt="ovo" width="50" class="rounded-lg">
+            <img src="../img/icon-pembayaran/shopeepay.png" alt="spay" width="50" class="rounded-lg">
+            <img src="../img/icon-pembayaran/qris.png" alt="qris" width="50" class="rounded-lg">
+            <img src="../img/icon-pembayaran/indomaret.png" alt="indomaret" width="50" class="rounded-lg">
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    feather.replace();
+  </script>
+  <script type="module" src="../js/navbar.js"></script>
+  <script>
+    const icons = 'https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-4.png'
+
+    const boxDiamonds = document.querySelector('.box-diamonds')
+    const paymentMEthod = document.querySelector('.payment-method')
+    const userID = document.getElementById('user-id')
+    const zoneID = document.getElementById('zone-id')
+    const itemPrices = document.querySelector('.harga-item')
+    const tax = document.querySelector('.pajak')
+    const discountAmount = document.querySelector('.promo')
+    const orderDetails = document.querySelector('.total-harga')
+    const promoInput = document.querySelector('.promo-input')
+    const validPromo = document.querySelector('.valid-promo')
+    const checkPromo = document.querySelector('.check-promo')
+    const order = document.querySelector('.order')
+
+    let itemPrice = 0
+    let paymentTax = 0
+    let discount = 0
+    let readyOrder = false
+
+    const paymentMethods = [
+      { name: 'Gopay', tax: 0.1, icon: '../img/icon-pembayaran/gopay.png' },
+      { name: 'Dana', tax: 0.1, icon: '../img/icon-pembayaran/dana.png' },
+      { name: 'OVO', tax: 0.1, icon: '../img/icon-pembayaran/ovo.png' },
+      { name: 'ShopeePay', tax: 0.1, icon: '../img/icon-pembayaran/shopeepay.png' },
+      { name: 'Indomaret', tax: 0.2, icon: '../img/icon-pembayaran/indomaret.png' },
+      { name: 'Qris', tax: 0.1, icon: '../img/icon-pembayaran/qris.png' }
+    ];
+
+    let icon = ''
+
+    const diamonds = [
+      {count: 475, price: 54999},
+      {count: 950, price: 105889},
+      {count: 1475, price: 160155},
+      {count: 2050, price: 210199},
+      {count: 2525, price: 258599},
+      {count: 3050, price: 310000},
+      {count: 3650, price: 360799},
+      {count: 4100, price: 411400},
+      {count: 4650, price: 46789},
+      {count: 5350, price: 511569},
+    ]  
+
+    const promo = [
+      {promoName: 'SHARONLY27', promoValue: 0.5, promoCategory: 'Diskon'}
+    ]
+
+    function format(format) {
+      return new Intl.NumberFormat('id-ID', {
+        style:"currency",
+        currency:"IDR"
+      }).format(format)
+    }
+
+    paymentMethods.forEach(payment => {
+      paymentMEthod.innerHTML += `
+        <div class="payment flex flex-col justify-between gap-3 bg-[#26588e] text-white shadow-md p-3 rounded-lg hover:bg-[#367ec9] hover:border hover:border-blue-400 hover:shadow-lg hover:shadow-[#367ec9] transition-all duration-150 cursor-pointer" data-tax='${payment.tax}'>
+          <img src='${payment.icon}' width='50' class='rounded-lg'>
+          <p class='text-sm'>${payment.name}</p>
+          <p class='text-sm'>Admin +${new Intl.NumberFormat('id-ID', {style:"percent", minimumFractionDigits: 2, maximumFractionDigits: 2}).format(payment.tax)}</p>
+        </div>
+      `
+    })
+
+    diamonds.forEach(item => {
+        
+    boxDiamonds.innerHTML += `
+       <div class="diamonds bg-[#26588e] text-white shadow-md flex flex-col items-center justify-between gap-3 p-3 rounded-lg hover:bg-[#367ec9] hover:border hover:border-blue-400 hover:shadow-lg hover:shadow-[#367ec9] transition-all duration-150 cursor-pointer box-border" data-price='${item.price}'>
+          <p class='text-sm'>${item.count} Points</p>
+          <img src='${icons}' width='30'>
+          <p class='text-sm'>${format(item.price)}</p>
+        </div>
+      `
+    })
+
+    const items = document.querySelectorAll('.diamonds')
+    const payment = document.querySelectorAll('.payment')
+
+    checkPromo.addEventListener('click', checkPromoIsValid)
+
+    items.forEach(item => {
+      item.addEventListener('click', ()=> {
+        items.forEach(i => i.classList.remove('selected', 'border-2', 'border-blue-400', '!bg-[#367ec9]'))
+        itemPrice = parseInt(item.getAttribute('data-price'))
+
+        item.classList.add('selected', 'border-2', 'border-blue-400', '!bg-[#367ec9]')
+        priceTotal()
+      })
+    })
+
+    payment.forEach(method => {
+      method.addEventListener('click', ()=> {
+        const itemselect = document.querySelector('.diamonds.selected')
+
+        if(!itemselect) {
+          alert("pilih nominal pembelian")
+        } else {
+          payment.forEach(i => i.classList.remove('selected', 'border-2', 'border-blue-400', '!bg-[#367ec9]'))
+          paymentTax = parseFloat(method.getAttribute('data-tax'))
+  
+          method.classList.add('selected', 'border-2', 'border-blue-400', '!bg-[#367ec9]')
+          priceTotal()
+        }
+      })
+    })
+
+    function checkPromoIsValid() {
+      const isPromo = promoInput.value
+      promo.some(obj =>{
+        if(isPromo === obj.promoName) {
+          discount = obj.promoValue
+          validPromo.classList.remove('text-red-500')
+          validPromo.classList.add('text-green-500')
+          validPromo.innerHTML = `Selamat, Anda Mendapatkan ${obj.promoCategory} ${new Intl.NumberFormat('id-ID', {style:"percent"}).format(obj.promoValue)}!`
+        } else {
+          validPromo.classList.remove('text-green-500')
+          validPromo.classList.add('text-red-500')
+          validPromo.innerHTML = "Kode Promo Tidak Valid!"
+        }
+      })
+      priceTotal()
+    }
+
+    function priceTotal() {
+      let totalDiscount = itemPrice*discount
+
+      const total = format(itemPrice + (itemPrice*paymentTax) - totalDiscount)
+
+      itemPrices.innerHTML = format(itemPrice)
+      tax.innerHTML = format(itemPrice*paymentTax)
+      discountAmount.innerHTML = format(-totalDiscount)
+      orderDetails.innerHTML = total
+      readyOrder = true
+    }
+
+    order.addEventListener('click', ()=> {
+      if(readyOrder) {
+        Swal.fire({
+          title: "Good job!",
+          text: "Order Berhasil!",
+          icon: "success"
+        })
+      } else {
+        alert('Silahkan Pilih Pembelian Terlebih Dahulu')
+      }
+    })
+  </script>
+</body>
+</html>

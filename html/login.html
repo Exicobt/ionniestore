@@ -62,7 +62,7 @@
           </span>
           <div class="menu fixed z-[999] h-screen w-[75%] max-w-[20rem] bg-[#1e456f] right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
             <div class="py-20 w-full lg:py-0 xl:py-0 flex flex-col lg:flex-row">
-              <a href="./html/promo.html">
+              <a href="promo.html">
                 <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
                     <button class="w-full py-5 flex items-center justify-center gap-2 text-white font-medium uppercase text-sm lg:w-28 lg:p-2 lg:rounded-full t" id="login">
                       <i data-feather="tag" class="w-5"></i>
@@ -70,7 +70,7 @@
                     </button>
                 </div>
               </a>
-              <a href="./html/login.html">
+              <a href="login.html">
                 <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
                     <button class="w-full py-5 flex items-center justify-center gap-2 text-white font-medium uppercase text-sm lg:w-28 lg:p-2 lg:rounded-full" id="login">
                       <i data-feather="log-in" class="w-5"></i>
@@ -87,18 +87,18 @@
   </header>
 
   <section class="relative mt-24 px-5 flex justify-center items-center">
-    <div class="login bg-white/50 w-full max-w-[500px] h-[550px] rounded-xl shadow-md backdrop-blur-md px-20 py-10">
+    <div class="login bg-[#6092c76b] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] text-white w-full max-w-[500px] h-[550px] rounded-xl backdrop-blur-md px-10 md:px-14 lg:px-20 py-10">
       <h1 class="text-2xl text-center">LOGIN</h1>
       <form class="w-full flex flex-col mt-14 gap-6">
-        <input type="text" class="username bg-transparent border-b-2 border-black outline-none px-2 py-3 placeholder:text-black" placeholder="username" required>
-        <input type="password" class="password-login bg-transparent border-b-2 border-black outline-none px-2 py-3 placeholder:text-black" placeholder="password" required>
+        <input type="text" class="username bg-transparent border-b border-white outline-none px-2 py-3 placeholder:text-white" placeholder="username" required>
+        <input type="password" class="password-login bg-transparent border-b border-white outline-none px-2 py-3 placeholder:text-white" placeholder="password" required>
         <p class="text-sm flex gap-2">
           <input type="checkbox" class="show-password">
           show password
         </p>
-        <a href="#">Forget password?</a>
-        <button class=" bg-[#89abae] px-10 py-2 font-medium text-white/80 rounded-full transition-all duration-100 hover:bg-[#b5c6e0] hover:text-black">LOGIN</button>
-        <p class="question">Dont have an acoount? <a href="sign-up.html">sign up</a></p>
+        <a href="#" class="text-sm">Forget password?</a>
+        <button class=" bg-[#1f39ad] px-10 py-2 font-medium text-white/80 rounded-full transition-all duration-100 hover:bg-[#2644cc]">LOGIN</button>
+        <p class="question text-sm">Dont have an acoount? <a href="sign-up.html">sign up</a></p>
       </form>
     </div>
   </section>
@@ -109,8 +109,8 @@
       <div class="text-start">
         <h3 class="font-bold mb-2">PETA SITUS</h3>
         <div class="flex flex-col text-black/70">
-          <a href="login.html" class="text-white">Masuk</a>
-          <a href="login.html" class="text-white">Daftar</a>
+          <a href="#" class="text-white">Masuk</a>
+          <a href="sign-up.html" class="text-white">Daftar</a>
           <a href="promo.html" class="text-white">Promo</a>
         </div>
       </div>
@@ -161,14 +161,7 @@
 
     document.querySelector('form').addEventListener('submit', (e)=> {
       e.preventDefault()
-      Swal.fire({
-        title: "Good job!",
-        text: "Login Berhasil!",
-        icon: "success"
-      })
-      setTimeout(() => {
         document.location = '../index.html'
-      }, 3000);
     })
   </script>
 </body>

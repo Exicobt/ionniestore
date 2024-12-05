@@ -62,7 +62,7 @@
           </span>
           <div class="menu fixed z-[999] h-screen w-[75%] max-w-[20rem] bg-[#1e456f] right-0 top-0 bottom-0 shadow-lg rounded-s-md translate-x-full transition-all duration-300 xl:static xl:h-full xl:w-full xl:bg-transparent xl:shadow-none xl:rounded-none xl:translate-x-0 lg:static lg:h-full lg:w-full lg:bg-transparent lg:shadow-none lg:rounded-none lg:translate-x-0">
             <div class="py-20 w-full lg:py-0 xl:py-0 flex flex-col lg:flex-row">
-              <a href="./html/promo.html">
+              <a href="promo.html">
                 <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
                     <button class="w-full py-5 flex items-center justify-center gap-2 text-white font-medium uppercase text-sm lg:w-28 lg:p-2 lg:rounded-full t" id="login">
                       <i data-feather="tag" class="w-5"></i>
@@ -70,7 +70,7 @@
                     </button>
                 </div>
               </a>
-              <a href="./html/login.html">
+              <a href="login.html">
                 <div class="hover:bg-[#00000021] px-10 lg:px-0 xl:px-0 lg:rounded-full xl:rounded-full">
                     <button class="w-full py-5 flex items-center justify-center gap-2 text-white font-medium uppercase text-sm lg:w-28 lg:p-2 lg:rounded-full" id="login">
                       <i data-feather="log-in" class="w-5"></i>
@@ -144,12 +144,12 @@
   
       <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-5 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
           <h2 class="text-lg font-semibold text-white/80 mb-4">Pilih Nominal Topup:</h2>
-          <div class="box-diamonds box-border grid grid-cols-3 md:grid-cols-4 gap-4"></div>
+          <div class="box-diamonds box-border grid grid-cols-2 md:grid-cols-3 gap-4"></div>
       </div>
   
       <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-5 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
           <h2 class="text-lg font-semibold text-white/80 mb-4">Pilih Metode Pembayaran:</h2>
-          <div class="payment-method  grid grid-cols-3 md:grid-cols-4 gap-4"></div>
+          <div class="payment-method  grid grid-cols-2 md:grid-cols-3 gap-4"></div>
       </div>
   
       <div class="mx-5 md:mx-10 lg:mx-5 xl:mx-5 mt-5 px-5 py-3 pb-10 bg-[#1e456f] border-2 border-[#3275bc] shadow-2xl shadow-[#2eb2ff] rounded-xl">
@@ -196,7 +196,7 @@
         <h3 class="font-bold mb-2">PETA SITUS</h3>
         <div class="flex flex-col text-black/70">
           <a href="login.html" class="text-white">Masuk</a>
-          <a href="login.html" class="text-white">Daftar</a>
+          <a href="sign-up.html" class="text-white">Daftar</a>
           <a href="promo.html" class="text-white">Promo</a>
         </div>
       </div>
@@ -300,7 +300,7 @@
         item.icon = icons[1]
       } else {
         item.icon = icons[2]
-    }
+      }
 
     boxDiamonds.innerHTML += `
        <div class="diamonds bg-[#26588e] text-white shadow-md flex flex-col items-center justify-between gap-3 p-3 rounded-lg hover:bg-[#367ec9] hover:border hover:border-blue-400 hover:shadow-lg hover:shadow-[#367ec9] transition-all duration-150 cursor-pointer box-border" data-price='${item.price}'>
