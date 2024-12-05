@@ -43,45 +43,45 @@ document.addEventListener("click", (e) => {
     }
 })
 
-function searchGame(games) {
-    searching.addEventListener('input', (e) => {
-        const query = e.target.value.split(" ").join("").toLowerCase();
+function searchGame() {
 
-        if(query !== "") {
-            resultField.classList.remove("hidden")
-            result.innerHTML = ""
+    data.games.forEach(game => {
+    
+        searching.addEventListener('input', (e) => {
+            const query = e.target.value.split(" ").join("").toLowerCase();
 
-            const filteredGames = games.filter(item => item.name.split(" ").join("").toLowerCase().includes(query));
+            if(query !== "") {
+                resultField.classList.remove("hidden")
+                result.innerHTML = ""
 
-            if (filteredGames.length > 0) {
-                filteredGames.forEach(item => {
-                    const results = document.createElement('a')
-                    results.setAttribute('href', `../html/${item.name.replaceAll(' ', '-').toLowerCase()}.html`)
-                    results.classList.add('overflow-hidden', 'flex', 'items-center', 'px-5', 'my-3', 'py-1', 'hover:bg-[#00000038]', 'cursor-pointer', 'transition-all', 'duration-100')
+                const filteredGames = data.games.filter(item => item.name.split(" ").join("").toLowerCase().includes(query));
 
-                    results.innerHTML = `
-                        <img src=${item.logo} alt=${item.name} width="50" class="rounded-lg">
-                        <p class="text-white ml-5 font-medium">${item.name}</p>
-                    `;
+                if (filteredGames.length > 0) {
+                    filteredGames.forEach(item => {
+                        const results = document.createElement('a')
+                        results.setAttribute('href', `../html/${item.name.replaceAll(' ', '-').toLowerCase()}.html`)
+                        results.classList.add('overflow-hidden', 'flex', 'items-center', 'px-5', 'my-3', 'py-1', 'hover:bg-[#00000038]', 'cursor-pointer', 'transition-all', 'duration-100')
 
-                    result.appendChild(results)
-                    
-                });
+                        results.innerHTML = `
+                            <img src=${item.logo} alt=${item.name} width="50" class="rounded-lg">
+                            <p class="text-white ml-5 font-medium">${item.name}</p>
+                        `;
+
+                        result.appendChild(results)
+                        
+                    });
+                } else {
+                    result.innerHTML = `<p class="text-white ml-5 font-medium p-1 my-3 text-sm">Hasil pencarian tidak ditemukan</p>`
+                }
             } else {
-                result.innerHTML = `<p class="text-white ml-5 font-medium p-1 my-3 text-sm">Hasil pencarian tidak ditemukan</p>`
+                resultField.classList.add("hidden")
+                result.innerHTML = ""
             }
-        } else {
-            resultField.classList.add("hidden")
-            result.innerHTML = ""
-        }
+        });
     });
 }
 
-data.then(games => {
-    games.forEach(e => {
-        searchGame(games)
-    });
-})
+searchGame()
 
 hamburgerBtn.addEventListener('click', ()=> {
     menu.classList.add("!translate-x-0")
